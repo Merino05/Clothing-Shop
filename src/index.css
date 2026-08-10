@@ -39,3 +39,10 @@ html, body { direction: rtl; text-align: right; background: #fff; color: #343434
   opacity: 1;
   transform: translateY(0);
 }
+@keyframes pulseOnce {
+  0% { transform: scale(1.15); border-color: #ff9811; }
+  100% { transform: scale(1); }
+}
+.animate-pulseOnce {
+  animation: pulseOnce 0.4s ease-out;
+}

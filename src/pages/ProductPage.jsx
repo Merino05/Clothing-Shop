@@ -2,7 +2,7 @@ import Breadcrumb from "../Product components/Breadcrumb.jsx";
 import FilterSidebar from "../Product components/FilterSidebar.jsx";
 import ProductGrid from "../Product components/ProductGrid.jsx";
 import Pagination from "../Product components/Pagination.jsx";
-import { PRODUCTS } from "../Home components/ProductSection.jsx";
+import { PRODUCTS } from "../data/products.jsx";
 import { useEffect, useState } from "react";
 import { SearchIcon } from "../Home components/Icons.jsx";
 import { useSearchParams } from "react-router-dom";

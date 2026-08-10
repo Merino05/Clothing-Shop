@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { PRODUCTS } from "../Home components/ProductSection.jsx";
+import { PRODUCTS } from "../data/products.jsx";
 import Breadcrumb from "../Product components/Breadcrumb.jsx";
 import ProductGallery from "../Product components/ProductGallery.jsx";
 import ProductInfo from "../Product components/ProductInfo.jsx";

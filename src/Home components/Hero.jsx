@@ -1,11 +1,8 @@
-const FEATURES = ["دوخت ترک", "کِش بلند", "دوخت ترک", "جنس پشم"];
-const COUNTDOWN = [
-  ["۴", "روز"],
-  ["۲۰", "ساعت"],
-  ["۱۶", "دقیقه"],
-  ["۳۸", "ثانیه"],
-];
+import CountdownTimer from "./CountdownTimer";
 
+const FEATURES = ["دوخت ترک", "کِش بلند", "دوخت ترک", "جنس پشم"];
+// یه تاریخ ۴ روز بعد از الان، فقط برای تست - بعداً از بک میاد
+const SALE_END_DATE = new Date(Date.now() + 4 * 24 * 60 * 60 * 1000);
 export default function Hero() {
   return (
     <section className="relative overflow-hidden pt-24 min-h-[600px]">
@@ -89,18 +86,9 @@ export default function Hero() {
             اطلاعات بیشتر ...
           </button>
         </div>
-        <div className="flex gap-1.5 sm:gap-2">
-          {COUNTDOWN.map(([n, l]) => (
-            <div key={l} className="text-center">
-              <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full border-2 border-orange-300 flex items-center justify-center font-bold text-sm sm:text-base bg-white/50 backdrop-blur-sm">
-                {n}
-              </div>
-              <p className="text-[8px] sm:text-[10px] mt-1 text-neutral-500">
-                {l}
-              </p>
-            </div>
-          ))}
-        </div>
+        
+          <CountdownTimer targetDate={SALE_END_DATE} />
+        
       </div>
     </section>
   );

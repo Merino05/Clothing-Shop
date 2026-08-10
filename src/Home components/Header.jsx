@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import { BagIcon, SearchIcon } from "./Icons.jsx";
+import { BagIcon, CloseIcon, SearchIcon } from "./Icons.jsx";
 import { IconBtn } from "./Shared.jsx";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { useCart } from "../context/CartContext.jsx";
+import CartPanelContent from "../context/CartPanelContent.jsx";
 const RIGHT_MENU = [
   { label: "صفحه اصلی", path: "/" },
   { label: "محصولات", path: "/Products" },
@@ -20,6 +22,7 @@ const TOP_MENU = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { totalCount, isOpen, setIsOpen } = useCart();
   useEffect(() => {
     const handleScroll = () => {
       // اگر بیشتر از ۵۰ پیکسل اسکرول کرد، استیت تغییر کند
@@ -126,12 +129,41 @@ const [query, setQuery] = useState("");
           ))}
         </nav>
         <div className="hidden md:flex items-center gap-4 text-sm text-neutral-600">
-          <IconBtn>
-            <SearchIcon className="w-5 h-5" />
+        <IconBtn>
+          <SearchIcon className="w-5 h-5" />
+        </IconBtn>
+
+        {/* دیو نسبی که هم آیکون هم دراپ‌داون توش هست */}
+        <div className="relative">
+          <IconBtn onClick={() => setIsOpen(!isOpen)}>
+            <div className="relative">
+              <BagIcon className="w-5 h-5" />
+              {totalCount > 0 && (
+                <span className="absolute -top-2 -left-2 bg-orange-500 text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                  {totalCount.toLocaleString("fa-IR")}
+                </span>
+              )}
+            </div>
           </IconBtn>
-          <IconBtn>
-            <BagIcon className="w-5 h-5" />
-          </IconBtn>
+
+          {/* دراپ‌داون دسکتاپ - دقیقاً همینجا، زیر آیکون */}
+          <div
+            className={`absolute top-full left-0 mt-3 w-96 bg-white rounded-2xl shadow-2xl border border-neutral-100 flex flex-col overflow-hidden transition-all duration-200 origin-top-left z-50 ${
+              isOpen
+                ? "opacity-100 scale-100 pointer-events-auto"
+                : "opacity-0 scale-95 pointer-events-none"
+            }`}
+          >
+            <div className="flex items-center justify-between px-6 py-4 border-b border-neutral-100">
+              <h2 className="font-black text-base">سبد خرید</h2>
+              <button onClick={() => setIsOpen(false)}>
+                <CloseIcon className="w-4 h-4" />
+              </button>
+            </div>
+            <CartPanelContent onNavigate={() => setIsOpen(false)} />
+          </div>
+        </div>
+
 
           <div className="flex items-center gap-2 mr-2">
             <div className="text-xs">

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { BagIcon, HeartIcon } from "../Home components/Icons.jsx";
 import { IconBtn, Price } from "../Home components/Shared.jsx";
+import { useCart } from "../context/CartContext.jsx";
 
 const SIZES = ["S", "M", "L", "XL"];
 const COLORS = ["#000000", "#ff9811", "#ffffff", "#454545"];
@@ -9,13 +10,17 @@ export default function ProductInfo({ product }) {
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
   const [qty, setQty] = useState(1);
-
+const { addToCart } = useCart();
+const handleAddToCart = () => {
+    addToCart(product, qty, { size: selectedSize, color: selectedColor });
+  };
   return (
     <div className="flex flex-col gap-5">
       <p className="text-[11px] text-neutral-400 uppercase">{product.cat}</p>
       <h1 className="text-2xl font-black">{product.title}</h1>
-
-      <Price price={product.price} oldPrice={product.old} />
+      <div className="flex items-start">
+      <Price price={product.price} oldPrice={product.old} big={true}/>
+      </div>
 
       <div className="w-full h-px bg-neutral-100" />
 
@@ -87,14 +92,17 @@ export default function ProductInfo({ product }) {
       </div>
 
       {/* دکمه‌ها */}
-      <div className="flex items-center gap-3 mt-2">
-        <button className="flex-1 flex items-center justify-center gap-2 bg-orange-500 text-white font-bold py-3 rounded-full hover:bg-orange-600 transition-colors">
-          <BagIcon className="w-5 h-5" />
-          افزودن به سبد خرید
-        </button>
+      <div className="flex items-center gap-5 mt-2">
         <IconBtn>
           <HeartIcon className="w-5 h-5" />
         </IconBtn>
+        <button
+    onClick={handleAddToCart}
+    className="flex-1 flex items-center justify-center gap-2 bg-orange-500 text-white font-bold py-3 rounded-md hover:bg-orange-600 transition-colors"
+  >
+    <BagIcon className="w-5 h-5" />
+    افزودن به سبد خرید
+  </button>
       </div>
     </div>
   );

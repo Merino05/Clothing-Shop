@@ -8,7 +8,7 @@ const SLIDES = [
     cta: "مشاهده محصولات",
     link: "/products",
     bg: "linear-gradient(135deg, #ff9811, #ffb84d)",
-     image: "/src/assets/pngtree-flat-lay-fashion-outfit-png-image.png",
+    image: "/src/assets/pngtree-flat-lay-fashion-outfit-png-image.png",
   },
   {
     title: "تا ۵۰٪ تخفیف",
@@ -24,7 +24,7 @@ const SLIDES = [
     cta: "شروع خرید",
     link: "/products",
     bg: "linear-gradient(135deg, #d8d8d8, #b9b9b9)",
-     image: "/src/assets/pngtree.png",
+    image: "/src/assets/pngtree.png",
   },
 ];
 
@@ -55,11 +55,11 @@ export default function HeroSlider() {
           {slide.cta}
         </Link>
       </div>
-<img
-      src={slide.image}
-      alt=""
-      className="w-[100%] order-first md:order-last md:w-auto h-40 md:h-[95%] object-contain z-10 transition-all duration-700"
-    />
+      <img
+        src={slide.image}
+        alt=""
+        className="w-[100%] order-first md:order-last md:w-auto h-40 md:h-[95%] object-contain z-10 transition-all duration-700"
+      />
 
       {/* دایره‌های دکوری */}
       <div className="absolute -left-10 -bottom-10 w-56 h-56 rounded-full bg-white/10 floaty" />

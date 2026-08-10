@@ -1,4 +1,4 @@
-import { PRODUCTS } from "../Home components/ProductSection.jsx";
+import { PRODUCTS } from "../data/products.jsx";
 import Breadcrumb from "../Product components/Breadcrumb.jsx";
 import HeroSlider from "../BestSellers components/HeroSlider.jsx";
 import PromoBanner from "../BestSellers components/PromoBanner.jsx";

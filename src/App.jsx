@@ -9,11 +9,16 @@ import Footer from "./Home components/Footer.jsx";
 import Products from "./pages/ProductPage.jsx";
 import ScrollToTop from "./utils/ScrollToTop.jsx";
 import ProductDetail from "./pages/ProductDetail.jsx";
+import CartDrawer from "./Home components/CartDrawer.jsx";
+import CartDrawerMobile from "./context/CartDrawerMobile.jsx";
+import BottomNav from "./Home components/BottomNav.jsx";
 export default function App() {
   return (
     <>
     <ScrollToTop />
       <Header />
+      <CartDrawerMobile  />
+      <BottomNav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/best-sellers" element={<BestSellers />} />

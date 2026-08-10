@@ -1,78 +1,13 @@
+import { useRef, useState } from "react";
 import { BagIcon, HeartIcon } from "./Icons.jsx";
 import { Price, IconBtn } from "./Shared.jsx";
+import { PRODUCTS } from "../data/products.jsx";
 
-export const PRODUCTS = [
-  { id:1,
-    cat: "WOMEN'S HYGIENE GEL",
-    title: "کراپ زنانه گره‌دار برند زارا رنگ سفید",
-    price: 1250000,
-    old: 2371000,
-    sold: 342,
-    url: "/src/assets/87857868 1.png",
-    images: [
-      "/src/assets/87857868 1.png",
-      "/src/assets/hio89 1.png",
-      "/src/assets/Layer 0 1.png",
-    ],
-    description:
-      "این کراپ زنانه با پارچه‌ای نرم و باکیفیت تولید شده و برای استفاده روزمره بسیار مناسب است. طراحی گره‌دار آن ظاهری شیک و مدرن به شما می‌دهد.",
-  },
-  {
-    id:2,
-    cat: "WOMEN'S HYGIENE GEL",
-    title: "کراپ زنانه گره‌دار برند زارا رنگ سفید",
-    price: 1250000,
-    old: 2371000,
-    sold: 150,
-    url: "/src/assets/hio89 1.png",
-    images: [
-      "/src/assets/87857868 1.png",
-      "/src/assets/hio89 1.png",
-      "/src/assets/Layer 0 1.png",
-    ],
-    description:
-      "این کراپ زنانه با پارچه‌ای نرم و باکیفیت تولید شده و برای استفاده روزمره بسیار مناسب است. طراحی گره‌دار آن ظاهری شیک و مدرن به شما می‌دهد.",
-  
-  },
-  {
-    id:3,
-    cat: "WOMEN'S HYGIENE GEL",
-    title: "کراپ زنانه گره‌دار برند زارا رنگ سفید",
-    price: 1250000,
-    old: 2371000,
-    sold: 500,
-    url: "/src/assets/Layer 0 1.png",
-    images: [
-      "/src/assets/87857868 1.png",
-      "/src/assets/hio89 1.png",
-      "/src/assets/Layer 0 1.png",
-    ],
-    description:
-      "این کراپ زنانه با پارچه‌ای نرم و باکیفیت تولید شده و برای استفاده روزمره بسیار مناسب است. طراحی گره‌دار آن ظاهری شیک و مدرن به شما می‌دهد.",
-  
-  },
-  {
-    id:4,
-    cat: "WOMEN'S HYGIENE GEL",
-    title: "کراپ زنانه گره‌دار برند زارا رنگ سفید",
-    price: 1250000,
-    old: 2371000,
-    sold: 200,
-    url: "/src/assets/Layer 0970790 1.png",
-    images: [
-      "/src/assets/87857868 1.png",
-      "/src/assets/hio89 1.png",
-      "/src/assets/Layer 0 1.png",
-    ],
-    description:
-      "این کراپ زنانه با پارچه‌ای نرم و باکیفیت تولید شده و برای استفاده روزمره بسیار مناسب است. طراحی گره‌دار آن ظاهری شیک و مدرن به شما می‌دهد.",
-  
-  },
-];
+const TABS = ["همه", "تخفیف دارها", "زمستانه"];
 
 function ProductCard({ p }) {
   return (
-    <div className="cardhov flex flex-col items-center gap-3 w-full py-4">
+    <div className="cardhov flex flex-col items-center gap-3 w-full py-4 flex-shrink-0 sm:w-[calc(50%-16px)] md:w-[calc(25%-24px)]">
       <div className="relative bg-[#f6f6f6] h-80 w-full flex items-end justify-center overflow-hidden">
         <div
           className="figure w-[80%] h-[90%] rounded-t-full flex justify-center items-end "
@@ -101,6 +36,25 @@ function ProductCard({ p }) {
 }
 
 export default function ProductSection({ title, subtitle }) {
+  const [activeTab, setActiveTab] = useState("همه");
+  const scrollRef = useRef(null);
+
+  const filteredProducts = PRODUCTS.filter((p) => {
+    if (activeTab === "همه") return true;
+    if (activeTab === "تخفیف دارها") return p.old && p.old > p.price;
+    if (activeTab === "زمستانه") return true; // فعلاً فیلد فصل نداریم، همه رو نشون میده
+    return true;
+  });
+
+  const scroll = (direction) => {
+    if (!scrollRef.current) return;
+    const amount = 320; // تقریبا عرض یک کارت + gap
+    scrollRef.current.scrollBy({
+      left: direction === "next" ? -amount : amount, // چون RTL هست جهت برعکسه
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className="max-w-7xl mx-auto px-8 py-16">
       <div className="flex items-center justify-between mb-10 flex-wrap gap-4">
@@ -112,28 +66,41 @@ export default function ProductSection({ title, subtitle }) {
           <p className="text-neutral-400 text-xs mt-2">{subtitle}</p>
         </div>
         <div className="flex flex flex-wrap gap-3">
-          {["زمستانه", "تخفیف دارها", "همه"].map((b, i) => (
+          {TABS.map((b) => (
             <button
               key={b}
-              className={
-                "text-xs font-bold px-6 py-2.5 border transition-colors hover:bg-neutral-100"
-              }
+              onClick={() => setActiveTab(b)}
+              className={`text-xs font-bold px-6 py-2.5 border transition-colors ${
+                activeTab === b
+                  ? "bg-orange-500 text-white border-orange-500"
+                  : "hover:bg-neutral-100"
+              }`}
             >
               {b}
             </button>
           ))}
           <div className="flex gap-1">
-            <button className="w-9 h-9 rounded-full border border-orange-400 text-orange-500 hover:bg-orange-500 hover:text-white transition-colors">
+            <button
+              onClick={() => scroll("prev")}
+              className="w-9 h-9 rounded-full border border-orange-400 text-orange-500 hover:bg-orange-500 hover:text-white transition-colors"
+            >
               ‹
             </button>
-            <button className="w-9 h-9 rounded-full border border-orange-400 text-orange-500 hover:bg-orange-500 hover:text-white transition-colors">
+            <button
+              onClick={() => scroll("next")}
+              className="w-9 h-9 rounded-full border border-orange-400 text-orange-500 hover:bg-orange-500 hover:text-white transition-colors"
+            >
               ›
             </button>
           </div>
         </div>
       </div>
-      <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
-        {PRODUCTS.map((p) => (
+
+      <div
+        ref={scrollRef}
+        className="flex gap-8 overflow-x-auto scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+      >
+        {filteredProducts.map((p) => (
           <ProductCard key={p.id} p={p} />
         ))}
       </div>

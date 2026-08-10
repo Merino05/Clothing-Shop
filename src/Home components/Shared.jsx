@@ -16,6 +16,13 @@ export function Price({ price, oldPrice, big }) {
   );
 }
 
-export function IconBtn({ children }) {
-  return <button className="heartbeat text-neutral-500 hover:text-orange-500 transition-colors">{children}</button>;
+export function IconBtn({ children, onClick }) {
+  return (
+    <button
+      onClick={onClick}
+      className="heartbeat text-neutral-500 hover:text-orange-500 transition-colors"
+    >
+      {children}
+    </button>
+  );
 }
