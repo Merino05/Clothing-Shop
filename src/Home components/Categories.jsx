@@ -1,12 +1,19 @@
-const CATS = [
-  { fa: "لباس مردانه", en: "Menswear", span: "md:col-span-2", img: "/src/assets/heather-ford-Tw9iB8TGRGI-unsplash 1.png" },
-  { fa: "اکسسوری", en: "Accessory", img: "/src/assets/stil-TVllFyGaLEA-unsplash 1.png" },
-  { fa: "لباس زمستانه", en: "Winterkleidung", img: "/src/assets/zemestoon.png" },
-  { fa: "لباس زیر", en: "Under wear", img: "/src/assets/neauthy-skincare-8jg7vumdUlU-unsplash 1.png" },
-  { fa: "لوازم آرایشی", en: "Cosmetic", img: "/src/assets/cosmetic.png" },
-  { fa: "لباس مسافرتی", en: "Travel clothes", span: "md:col-span-2", img: "/src/assets/mosaferati.png" },
-];
 
+import menswearImg from "../assets/heather-ford-Tw9iB8TGRGI-unsplash 1.png";
+import accessoryImg from "../assets/stil-TVllFyGaLEA-unsplash 1.png";
+import winterImg from "../assets/zemestoon.png";
+import underwearImg from "../assets/neauthy-skincare-8jg7vumdUlU-unsplash 1.png";
+import cosmeticImg from "../assets/cosmetic.png";
+import travelImg from "../assets/mosaferati.png";
+
+const CATS = [
+  { fa: "لباس مردانه", en: "Menswear", span: "md:col-span-2", img: menswearImg },
+  { fa: "اکسسوری", en: "Accessory", img: accessoryImg },
+  { fa: "لباس زمستانه", en: "Winterkleidung", img: winterImg },
+  { fa: "لباس زیر", en: "Under wear", img: underwearImg },
+  { fa: "لوازم آرایشی", en: "Cosmetic", img: cosmeticImg },
+  { fa: "لباس مسافرتی", en: "Travel clothes", span: "md:col-span-2", img: travelImg },
+];
 export default function Categories() {
   return (
     <section className="max-w-7xl mx-auto px-8 py-10" dir="rtl ">

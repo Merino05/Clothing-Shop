@@ -1,5 +1,6 @@
 import { BagIcon, HeartIcon } from "./Icons.jsx";
 import { Price } from "./Shared.jsx";
+import collection from "/src/assets/images.png";
 
 const STRIP_ITEMS = [
   { name: "پکیج ضد موخوره و تقویت کننده مو وان پلاس", price: 1250000 },
@@ -33,7 +34,7 @@ export default function CollectionStrip() {
         </div>
         <div className="h-96 flex justify-center  from-neutral-200 to-neutral-300">
           <img
-            src="/src/assets/images.png"
+            src={collection}
             alt=""
             className=" h-full"
           />

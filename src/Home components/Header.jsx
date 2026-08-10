@@ -4,6 +4,8 @@ import { IconBtn } from "./Shared.jsx";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext.jsx";
 import CartPanelContent from "../context/CartPanelContent.jsx";
+import profileImg from "../assets/Profile.png";
+
 const RIGHT_MENU = [
   { label: "صفحه اصلی", path: "/" },
   { label: "محصولات", path: "/Products" },
@@ -129,10 +131,7 @@ const [query, setQuery] = useState("");
           ))}
         </nav>
         <div className="hidden md:flex items-center gap-4 text-sm text-neutral-600">
-        <IconBtn>
-          <SearchIcon className="w-5 h-5" />
-        </IconBtn>
-
+       
         {/* دیو نسبی که هم آیکون هم دراپ‌داون توش هست */}
         <div className="relative">
           <IconBtn onClick={() => setIsOpen(!isOpen)}>
@@ -172,7 +171,7 @@ const [query, setQuery] = useState("");
             </div>
             <div className="w-8 h-8 rounded-full bg-neutral-200">
               <img
-                src="/src/assets/Profile.png"
+                src={profileImg}
                 alt=""
                 className="rounded-full"
               />

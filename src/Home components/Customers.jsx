@@ -1,11 +1,17 @@
+import img1 from "../assets/images (1).jpg";
+import img2 from "../assets/images (2).png";
+import img3 from "../assets/images (3).png";
+import img4 from "../assets/images (4).jpg";
+import img5 from "../assets/images (5).jpg";
 export default function Customers() {
-  const costom=[
-    {url:"src/assets/images (1).jpg"},
-    {url:"src/assets/images (2).png"},
-    {url:"src/assets/images (3).png"},
-    {url:"src/assets/images (4).jpg"},
-    {url:"src/assets/images (5).jpg"}
-  ]
+
+const costom = [
+  { url: img1 },
+  { url: img2 },
+  { url: img3 },
+  { url: img4 },
+  { url: img5 },
+];
   return (
     <section className="max-w-7xl mx-auto px-8 py-16 text-center">
       <div className="text-2xl mb-2">🏅</div>

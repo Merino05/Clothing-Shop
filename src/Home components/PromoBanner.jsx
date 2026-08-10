@@ -1,4 +1,5 @@
 import { Price } from "./Shared.jsx";
+import img from "/src/assets/homepage2-slider3 1.png";
 
 const FEATURES = ["دوخت ترک", "کِش بلند", "دوخت ترک", "جنس پشم"];
 
@@ -16,7 +17,7 @@ export default function PromoBanner() {
         {/* content */}
         <div className="relative h-full flex content-center items-center flex-wrap flex-row px-10 gap-8">
           <div className="floaty from-neutral-300 to-neutral-400 order-2 ">
-            <img src="/src/assets/homepage2-slider3 1.png" alt="" className="  w-auto"/>
+            <img src={img} alt="" className="  w-auto"/>
           </div>
           <div className="order-1 md:order-2 text-right space-y-3">
             <p className="text-xl text-neutral-700">تخفیف لباس زنانه مجلسی</p>

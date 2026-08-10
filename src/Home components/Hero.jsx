@@ -1,5 +1,5 @@
 import CountdownTimer from "./CountdownTimer";
-
+import heroimg from "/src/assets/woman 1.png";
 const FEATURES = ["دوخت ترک", "کِش بلند", "دوخت ترک", "جنس پشم"];
 // یه تاریخ ۴ روز بعد از الان، فقط برای تست - بعداً از بک میاد
 const SALE_END_DATE = new Date(Date.now() + 4 * 24 * 60 * 60 * 1000);
@@ -34,7 +34,7 @@ export default function Hero() {
 
           {/* خود عکس */}
           <img
-            src="/src/assets/woman 1.png"
+            src={heroimg}
             alt="woman model"
             className="h-[70%] sm:h-[75%] md:h-[85%] lg:h-[85%] w-auto object-contain transition-all duration-300"
           />

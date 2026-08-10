@@ -1,5 +1,9 @@
+import slide1Img from "../assets/pngtree-flat-lay-fashion-outfit-png-image.png";
+import slide2Img from "../assets/pngtree2.png";
+import slide3Img from "../assets/pngtree.png";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
 
 const SLIDES = [
   {
@@ -8,7 +12,7 @@ const SLIDES = [
     cta: "مشاهده محصولات",
     link: "/products",
     bg: "linear-gradient(135deg, #ff9811, #ffb84d)",
-    image: "/src/assets/pngtree-flat-lay-fashion-outfit-png-image.png",
+    image: slide1Img,
   },
   {
     title: "تا ۵۰٪ تخفیف",
@@ -16,7 +20,7 @@ const SLIDES = [
     cta: "خرید کنید",
     link: "/products",
     bg: "linear-gradient(135deg, #454545, #2c2c2c)",
-    image: "/src/assets/pngtree2.png",
+    image: slide2Img,
   },
   {
     title: "ارسال رایگان",
@@ -24,7 +28,7 @@ const SLIDES = [
     cta: "شروع خرید",
     link: "/products",
     bg: "linear-gradient(135deg, #d8d8d8, #b9b9b9)",
-    image: "/src/assets/pngtree.png",
+    image: slide3Img,
   },
 ];
 
