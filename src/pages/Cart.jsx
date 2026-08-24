@@ -49,75 +49,73 @@ export default function Cart() {
         <div className="lg:col-span-2 flex flex-col gap-4">
           {items.map((item) => (
             <div
-              key={item.key}
-              className="flex items-center gap-4 border border-neutral-100 rounded-2xl p-4"
-            >
-              <div className="w-24 h-24 bg-[#f6f6f6] rounded-xl flex-shrink-0 flex items-center justify-center overflow-hidden">
-                <img
-                  src={item.url}
-                  alt=""
-                  className="w-full h-full object-contain"
-                />
-              </div>
+  key={item.key}
+  className="flex flex-col gap-4 border border-neutral-100 rounded-2xl p-4 hover:shadow-md transition-shadow"
+>
+  <div className="flex items-start gap-4">
+    <div className="w-20 h-20 bg-[#f6f6f6] rounded-xl flex-shrink-0 flex items-center justify-center overflow-hidden">
+      <img src={item.url} alt="" className="w-full h-full object-contain" />
+    </div>
 
-              <div className="flex-1 min-w-0">
-                <Link to={`/products/${item.id}`}>
-                  <p className="font-bold text-sm hover:text-orange-500 transition-colors truncate">
-                    {item.title}
-                  </p>
-                </Link>
+    <div className="flex-1 min-w-0">
+      <Link to={`/products/${item.id}`}>
+        <p className="font-bold text-sm hover:text-orange-500 transition-colors">
+          {item.title}
+        </p>
+      </Link>
 
-                {(item.size || item.color) && (
-                  <div className="flex items-center gap-3 mt-1.5">
-                    {item.size && (
-                      <span className="text-xs text-neutral-400">
-                        سایز: {item.size}
-                      </span>
-                    )}
-                    {item.color && (
-                      <span className="flex items-center gap-1 text-xs text-neutral-400">
-                        رنگ:
-                        <span
-                          className="w-3.5 h-3.5 rounded-full border border-neutral-200 inline-block"
-                          style={{ background: item.color }}
-                        />
-                      </span>
-                    )}
-                  </div>
-                )}
+      {(item.size || item.color) && (
+        <div className="flex items-center gap-3 mt-1.5">
+          {item.size && (
+            <span className="text-xs text-neutral-400">سایز: {item.size}</span>
+          )}
+          {item.color && (
+            <span className="flex items-center gap-1 text-xs text-neutral-400">
+              رنگ:
+              <span
+                className="w-3.5 h-3.5 rounded-full border border-neutral-200 inline-block"
+                style={{ background: item.color }}
+              />
+            </span>
+          )}
+        </div>
+      )}
+    </div>
 
-                <div className="flex items-center justify-between flex-wrap gap-2 mt-3">
-                  <div className="flex items-center gap-3 border rounded-full px-2 py-1 w-fit flex-shrink-0">
-                    <button
-                      onClick={() => updateQty(item.key, item.qty - 1)}
-                      className="w-7 h-7 flex items-center justify-center hover:text-orange-500 transition-colors"
-                    >
-                      −
-                    </button>
-                    <span className="text-sm font-bold w-5 text-center">
-                      {item.qty.toLocaleString("fa-IR")}
-                    </span>
-                    <button
-                      onClick={() => updateQty(item.key, item.qty + 1)}
-                      className="w-7 h-7 flex items-center justify-center hover:text-orange-500 transition-colors"
-                    >
-                      +
-                    </button>
-                  </div>
+    <button
+      onClick={() => removeFromCart(item.key)}
+      className="text-neutral-300 hover:text-red-500 transition-colors flex-shrink-0"
+    >
+      <TrashIcon className="w-5 h-5" />
+    </button>
+  </div>
 
-                  <p className="font-black orange whitespace-nowrap">
-                    {(item.price * item.qty).toLocaleString("fa-IR")} تومان
-                  </p>
-                </div>
-              </div>
+  <div className="w-full h-px bg-neutral-100" />
 
-              <button
-                onClick={() => removeFromCart(item.key)}
-                className="text-neutral-300 hover:text-red-500 transition-colors flex-shrink-0 self-start"
-              >
-                <TrashIcon className="w-5 h-5" />
-              </button>
-            </div>
+  <div className="flex items-center justify-between">
+    <div className="flex items-center gap-3 border rounded-full px-2 py-1">
+      <button
+        onClick={() => updateQty(item.key, item.qty - 1)}
+        className="w-7 h-7 flex items-center justify-center hover:text-orange-500 transition-colors"
+      >
+        −
+      </button>
+      <span className="text-sm font-bold w-5 text-center">
+        {item.qty.toLocaleString("fa-IR")}
+      </span>
+      <button
+        onClick={() => updateQty(item.key, item.qty + 1)}
+        className="w-7 h-7 flex items-center justify-center hover:text-orange-500 transition-colors"
+      >
+        +
+      </button>
+    </div>
+
+    <p className="font-black orange text-sm md:text-base">
+  {(item.price * item.qty).toLocaleString("fa-IR")} تومان
+</p>
+  </div>
+</div>
           ))}
         </div>
 

@@ -9,11 +9,10 @@ export default function CartDrawerMobile() {
   const { items, isOpen, setIsOpen } = useCart();
   const location = useLocation();
 
-  useEffect(() => {
-    if (location.pathname.toLowerCase() === "/cart") {
-      setIsOpen(false);
-    }
-  }, [location.pathname]);
+  if (location.pathname.toLowerCase() === "/cart") {
+    return null;
+  }
+
 
   const portalRoot = document.getElementById("cart-portal");
   if (!portalRoot) return null;

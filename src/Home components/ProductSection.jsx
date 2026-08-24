@@ -13,7 +13,7 @@ function ProductCard({ p }) {
           className="figure w-[80%] h-[90%] rounded-t-full flex justify-center items-end "
           style={{ background: "linear-gradient(160deg, #d8d8d8, #b9b9b9)" }}
         >
-          <img src={p.url} alt="" />
+          <img src={p.url} alt="" className="h-[90%] " />
         </div>
         <div className="grad absolute inset-0 pointer-events-none" />
       </div>
