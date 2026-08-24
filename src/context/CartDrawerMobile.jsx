@@ -1,22 +1,34 @@
+import { useEffect } from "react";
+import { createPortal } from "react-dom";
+import { useLocation } from "react-router-dom";
 import { useCart } from "../context/CartContext.jsx";
 import { BagIcon, CloseIcon } from "../Home components/Icons.jsx";
-
 import CartPanelContent from "./CartPanelContent.jsx";
 
 export default function CartDrawerMobile() {
   const { items, isOpen, setIsOpen } = useCart();
+  const location = useLocation();
 
-  return (
+  useEffect(() => {
+    if (location.pathname.toLowerCase() === "/cart") {
+      setIsOpen(false);
+    }
+  }, [location.pathname]);
+
+  const portalRoot = document.getElementById("cart-portal");
+  if (!portalRoot) return null;
+
+  return createPortal(
     <div className="md:hidden">
       <div
         onClick={() => setIsOpen(false)}
-        className={`fixed inset-0 bg-black/40 z-40 transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-black/40 z-[999] transition-opacity duration-300 ${
           isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       />
 
       <aside
-        className={`fixed top-0 right-0 h-full w-full sm:w-96 bg-white z-50 flex flex-col transition-transform duration-300 ${
+        className={`fixed top-0 right-0 h-full w-full sm:w-96 bg-white z-[1000] flex flex-col transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -37,6 +49,7 @@ export default function CartDrawerMobile() {
 
         <CartPanelContent onNavigate={() => setIsOpen(false)} />
       </aside>
-    </div>
+    </div>,
+    portalRoot
   );
 }

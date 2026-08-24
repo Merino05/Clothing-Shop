@@ -91,7 +91,7 @@ export default function CartPanelContent({ onNavigate }) {
             </span>
           </div>
           <Link
-            to="/checkout"
+            to="/"
             onClick={onNavigate}
             className="bg-orange-500 text-white text-center font-bold py-3 rounded-md hover:bg-orange-600 transition-colors"
           >

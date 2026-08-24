@@ -128,7 +128,7 @@ export default function CartDrawer() {
               </span>
             </div>
             <Link
-              to="/checkout"
+              to="/cart"
               onClick={() => setIsOpen(false)}
               className="bg-orange-500 text-white text-center font-bold py-3 rounded-full hover:bg-orange-600 transition-colors"
             >

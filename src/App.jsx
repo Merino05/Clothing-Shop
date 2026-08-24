@@ -9,9 +9,9 @@ import Footer from "./Home components/Footer.jsx";
 import Products from "./pages/ProductPage.jsx";
 import ScrollToTop from "./utils/ScrollToTop.jsx";
 import ProductDetail from "./pages/ProductDetail.jsx";
-import CartDrawer from "./Home components/CartDrawer.jsx";
 import CartDrawerMobile from "./context/CartDrawerMobile.jsx";
 import BottomNav from "./Home components/BottomNav.jsx";
+import Cart from "./pages/Cart.jsx";
 export default function App() {
   return (
     <>
@@ -26,6 +26,7 @@ export default function App() {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/products/:id" element={<ProductDetail />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       <Footer />
     </>

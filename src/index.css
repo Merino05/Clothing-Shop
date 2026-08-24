@@ -46,3 +46,6 @@ html, body { direction: rtl; text-align: right; background: #fff; color: #343434
 .animate-pulseOnce {
   animation: pulseOnce 0.4s ease-out;
 }
+/* html, body {
+  overflow-x: hidden;
+} */

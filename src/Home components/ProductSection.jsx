@@ -65,7 +65,7 @@ export default function ProductSection({ title, subtitle }) {
           </h2>
           <p className="text-neutral-400 text-xs mt-2">{subtitle}</p>
         </div>
-        <div className="flex flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-3">
           {TABS.map((b) => (
             <button
               key={b}
