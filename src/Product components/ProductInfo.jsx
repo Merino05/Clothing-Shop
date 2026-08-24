@@ -10,8 +10,8 @@ export default function ProductInfo({ product }) {
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
   const [qty, setQty] = useState(1);
-const { addToCart } = useCart();
-const handleAddToCart = () => {
+  const { addToCart } = useCart();
+  const handleAddToCart = () => {
     addToCart(product, qty, { size: selectedSize, color: selectedColor });
   };
   return (
@@ -19,7 +19,7 @@ const handleAddToCart = () => {
       <p className="text-[11px] text-neutral-400 uppercase">{product.cat}</p>
       <h1 className="text-2xl font-black">{product.title}</h1>
       <div className="flex items-start">
-      <Price price={product.price} oldPrice={product.old} big={true}/>
+        <Price price={product.price} oldPrice={product.old} big={true} />
       </div>
 
       <div className="w-full h-px bg-neutral-100" />
@@ -93,16 +93,19 @@ const handleAddToCart = () => {
 
       {/* دکمه‌ها */}
       <div className="flex items-center gap-5 mt-2">
+        <button
+          onClick={handleAddToCart}
+          disabled={!selectedSize || !selectedColor}
+          className={`flex-1 flex items-center justify-center gap-2 bg-orange-500 text-white font-bold py-3 rounded-md transition-colors
+    ${!selectedSize || !selectedColor ? "opacity-50 " : "hover:bg-orange-600"}
+  `}
+        >
+          <BagIcon className="w-5 h-5" />
+          افزودن به سبد خرید
+        </button>
         <IconBtn>
           <HeartIcon className="w-5 h-5" />
         </IconBtn>
-        <button
-    onClick={handleAddToCart}
-    className="flex-1 flex items-center justify-center gap-2 bg-orange-500 text-white font-bold py-3 rounded-md hover:bg-orange-600 transition-colors"
-  >
-    <BagIcon className="w-5 h-5" />
-    افزودن به سبد خرید
-  </button>
       </div>
     </div>
   );
