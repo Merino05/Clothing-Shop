@@ -7,8 +7,8 @@ const TABS = ["همه", "تخفیف دارها", "زمستانه"];
 
 function ProductCard({ p }) {
   return (
-    <div className="cardhov flex flex-col items-center gap-3 w-full py-4 flex-shrink-0 sm:w-[calc(50%-16px)] md:w-[calc(25%-24px)]">
-      <div className="relative bg-[#f6f6f6] h-80 w-full flex items-end justify-center overflow-hidden">
+    <div className="cardhov flex flex-col items-center gap-3 w-[160px] py-4 flex-shrink-0 sm:w-[calc(50%-16px)] md:w-[calc(33.33%-16px)] lg:w-[calc(25%-24px)] ">
+      <div className="relative bg-[#f6f6f6] h-[200px] sm:h-64 md:h-72 lg:h-80 w-full flex items-end justify-center overflow-hidden ">
         <div
           className="figure w-[80%] h-[90%] rounded-t-full flex justify-center items-end "
           style={{ background: "linear-gradient(160deg, #d8d8d8, #b9b9b9)" }}
@@ -17,17 +17,19 @@ function ProductCard({ p }) {
         </div>
         <div className="grad absolute inset-0 pointer-events-none" />
       </div>
-      <div className="flex flex-col items-center gap-1 px-4 text-center">
-        <p className="text-[11px] text-neutral-400 uppercase">{p.cat}</p>
-        <p className="ctitle font-extrabold text-sm">{p.title}</p>
-        <div className="w-full h-px bg-neutral-100 my-1" />
-        <div className="flex items-center justify-center gap-6 w-full">
+      <div className="flex flex-col items-center gap-0.5 sm:gap-1 md:gap-1.5 px-2 sm:px-3 md:px-4 text-center w-full">
+        <p className="text-[10px] sm:text-[11px] md:text-[12px] text-neutral-400 uppercase w-full">{p.cat}</p>
+        <p className="ctitle font-extrabold text-[12px] sm:text-sm md:text-base w-full leading-tight">{p.title}</p>
+        <div className="w-full h-px bg-neutral-100 my-0.5 sm:my-1" />
+        <div className="flex items-center justify-center gap-1 sm:gap-3 md:gap-4 lg:gap-6 w-full">
           <IconBtn>
-            <BagIcon className="w-5 h-5" />
+            <BagIcon className="w-3.5 h-3.5 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 lg:w-5.5 lg:h-5.5" />
           </IconBtn>
-          <Price price={p.price} oldPrice={p.old} />
+          <div className="text-[7px] sm:text-[10px] md:text-xs lg:text-sm">
+  <Price price={p.price} oldPrice={p.old} />
+ </div>
           <IconBtn>
-            <HeartIcon className="w-5 h-5" />
+            <HeartIcon className="w-3.5 h-3.5 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 lg:w-5.5 lg:h-5.5" />
           </IconBtn>
         </div>
       </div>
