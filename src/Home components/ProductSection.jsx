@@ -18,8 +18,8 @@ function ProductCard({ p }) {
         <div className="grad absolute inset-0 pointer-events-none" />
       </div>
       <div className="flex flex-col items-center gap-0.5 sm:gap-1 md:gap-1.5 px-2 sm:px-3 md:px-4 text-center w-full">
-        <p className="text-[10px] sm:text-[11px] md:text-[12px] text-neutral-400 uppercase w-full">{p.cat}</p>
-        <p className="ctitle font-extrabold text-[12px] sm:text-sm md:text-base w-full leading-tight">{p.title}</p>
+        <p className="text-[10px] sm:text-[11px] md:text-[12px] text-neutral-400 uppercase w-full ">{p.cat}</p>
+        <p className="ctitle font-extrabold text-[12px] sm:text-sm md:text-base w-full leading-tight truncate ">{p.title}</p>
         <div className="w-full h-px bg-neutral-100 my-0.5 sm:my-1" />
         <div className="flex items-center justify-center gap-1 sm:gap-3 md:gap-4 lg:gap-6 w-full">
           <IconBtn>

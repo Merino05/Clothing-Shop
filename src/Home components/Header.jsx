@@ -12,7 +12,7 @@ const RIGHT_MENU = [
   { label: "پرفروش ها", path: "/best-sellers" },
   { label: "تماس با ما", path: "/contact" },
   { label: "مطالب وبلاگ", path: "/blog" },
-  { label: "بیشتر", path: "/more" },
+  { label: "درباره ما", path: "/about" },
 ];
 const TOP_MENU = [
   { label: "آموزش", path: "/best-sellers" },

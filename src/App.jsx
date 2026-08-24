@@ -12,6 +12,8 @@ import ProductDetail from "./pages/ProductDetail.jsx";
 import CartDrawerMobile from "./context/CartDrawerMobile.jsx";
 import BottomNav from "./Home components/BottomNav.jsx";
 import Cart from "./pages/Cart.jsx";
+import AboutUs from "./pages/AboutUs.jsx";
+import BlogDetail from "./pages/BlogDetail.jsx";
 export default function App() {
   return (
     <>
@@ -25,8 +27,11 @@ export default function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogDetail />} />
         <Route path="/products/:id" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/contact" element={<ContactUs />} />
       </Routes>
       <Footer />
     </>
