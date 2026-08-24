@@ -53,7 +53,11 @@ export default function Cart() {
               className="flex items-center gap-4 border border-neutral-100 rounded-2xl p-4"
             >
               <div className="w-24 h-24 bg-[#f6f6f6] rounded-xl flex-shrink-0 flex items-center justify-center overflow-hidden">
-                <img src={item.url} alt="" className="w-full h-full object-contain" />
+                <img
+                  src={item.url}
+                  alt=""
+                  className="w-full h-full object-contain"
+                />
               </div>
 
               <div className="flex-1 min-w-0">
@@ -82,8 +86,8 @@ export default function Cart() {
                   </div>
                 )}
 
-                <div className="flex items-center justify-between mt-3">
-                  <div className="flex items-center gap-3 border rounded-full px-2 py-1 w-fit">
+                <div className="flex items-center justify-between flex-wrap gap-2 mt-3">
+                  <div className="flex items-center gap-3 border rounded-full px-2 py-1 w-fit flex-shrink-0">
                     <button
                       onClick={() => updateQty(item.key, item.qty - 1)}
                       className="w-7 h-7 flex items-center justify-center hover:text-orange-500 transition-colors"
@@ -101,7 +105,7 @@ export default function Cart() {
                     </button>
                   </div>
 
-                  <p className="font-black orange">
+                  <p className="font-black orange whitespace-nowrap">
                     {(item.price * item.qty).toLocaleString("fa-IR")} تومان
                   </p>
                 </div>
@@ -125,7 +129,8 @@ export default function Cart() {
             <div className="flex items-center justify-between text-sm text-neutral-500">
               <span>تعداد کالا</span>
               <span>
-                {items.reduce((s, i) => s + i.qty, 0).toLocaleString("fa-IR")} عدد
+                {items.reduce((s, i) => s + i.qty, 0).toLocaleString("fa-IR")}{" "}
+                عدد
               </span>
             </div>
 
