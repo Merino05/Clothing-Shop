@@ -16,6 +16,7 @@ import AboutUs from "./pages/AboutUs.jsx";
 import BlogDetail from "./pages/BlogDetail.jsx";
 import Account from "./pages/Account.jsx";
 import HelpCenter from "./pages/HelpCenter.jsx";
+import Checkout from "./pages/Checkout.jsx";
 export default function App() {
   return (
     <>
@@ -36,6 +37,7 @@ export default function App() {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/profile" element={<Account />} />
         <Route path="/help" element={<HelpCenter />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
       <Footer />
     </>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { PRODUCTS } from "../data/products.jsx";
 import Breadcrumb from "../Product components/Breadcrumb.jsx";
+import { useAddress } from "../context/AddressContext.jsx";
 import {
   UserIcon,
   BagIcon,
@@ -12,7 +13,7 @@ import {
   TrashIcon,
   ClockIcon,
 } from "../Home components/Icons.jsx";
-
+import prof from "../assets/Profile.png"
 const TABS = [
   { key: "info", label: "اطلاعات من", icon: UserIcon },
   { key: "orders", label: "سفارش‌ها", icon: BagIcon },
@@ -103,7 +104,7 @@ function OrdersTab() {
 }
 
 function AddressesTab() {
-  const [addresses, setAddresses] = useState(ADDRESSES);
+  const { addresses, addAddress, removeAddress } = useAddress();
   const [showForm, setShowForm] = useState(false);
   const [newAddress, setNewAddress] = useState({ title: "", detail: "" });
 
@@ -111,10 +112,7 @@ function AddressesTab() {
     e.preventDefault();
     if (!newAddress.title.trim() || !newAddress.detail.trim()) return;
 
-    setAddresses((prev) => [
-      ...prev,
-      { id: Date.now(), title: newAddress.title, detail: newAddress.detail },
-    ]);
+    addAddress(newAddress.title, newAddress.detail);
     setNewAddress({ title: "", detail: "" });
     setShowForm(false);
   };
@@ -124,7 +122,7 @@ function AddressesTab() {
       {addresses.map((a) => (
         <div
           key={a.id}
-          className="flex items-start justify-between gap-3 border border-neutral-100 rounded-2xl p-4"
+          className="flex items-start justify-between gap-2 border border-neutral-100 rounded-2xl p-5"
         >
           <div className="flex items-start gap-4">
             <div className="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center orange flex-shrink-0">
@@ -136,7 +134,7 @@ function AddressesTab() {
             </div>
           </div>
           <button
-            onClick={() => setAddresses((prev) => prev.filter((x) => x.id !== a.id))}
+            onClick={() => removeAddress(a.id)}
             className="text-neutral-300 hover:text-red-500 transition-colors flex-shrink-0"
           >
             <TrashIcon className="w-5 h-5" />
@@ -147,38 +145,30 @@ function AddressesTab() {
       {showForm ? (
         <form
           onSubmit={handleAdd}
-          className="border border-neutral-100 rounded-2xl p-4 flex flex-col gap-4"
+          className="border border-neutral-100 rounded-2xl p-5 flex flex-col gap-4"
         >
           <div className="flex flex-col gap-2">
-            <label className="text-xs font-bold text-neutral-500">
-              عنوان آدرس
-            </label>
+            <label className="text-xs font-bold text-neutral-500">عنوان آدرس</label>
             <input
               value={newAddress.title}
-              onChange={(e) =>
-                setNewAddress({ ...newAddress, title: e.target.value })
-              }
+              onChange={(e) => setNewAddress({ ...newAddress, title: e.target.value })}
               placeholder="مثلاً منزل، محل کار"
               className="w-full border border-neutral-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-orange-400 transition-colors"
             />
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-xs font-bold text-neutral-500">
-              آدرس کامل
-            </label>
+            <label className="text-xs font-bold text-neutral-500">آدرس کامل</label>
             <textarea
               value={newAddress.detail}
-              onChange={(e) =>
-                setNewAddress({ ...newAddress, detail: e.target.value })
-              }
+              onChange={(e) => setNewAddress({ ...newAddress, detail: e.target.value })}
               rows={3}
               placeholder="استان، شهر، خیابان، پلاک..."
               className="w-full border border-neutral-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-orange-400 transition-colors resize-none"
             />
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <button
               type="submit"
               className="bg-orange-500 text-white font-bold px-4 py-2 rounded-xl hover:bg-orange-600 transition-colors text-sm"
@@ -259,7 +249,7 @@ export default function Account() {
           <div className="flex flex-col items-center text-center gap-3 border border-neutral-100 rounded-2xl p-6">
             <div className="relative">
               <img
-                src="/src/assets/Profile.png"
+                src={prof}
                 alt=""
                 className="w-20 h-20 rounded-full object-cover"
               />

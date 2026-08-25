@@ -147,8 +147,8 @@ export default function Cart() {
             </div>
 
             <Link
-              to="/"
-              className="bg-orange-500 text-white text-center font-bold py-3.5 rounded-md hover:bg-orange-600 transition-colors mt-2"
+              to="/checkout"
+              className="bg-orange-500 text-sm text-white text-center font-bold py-3 rounded-md hover:bg-orange-600 transition-colors mt-2"
             >
               ادامه فرآیند خرید
             </Link>
