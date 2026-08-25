@@ -110,7 +110,7 @@ export default function AboutUs() {
           </p>
           <Link
             to="/products"
-            className="bg-orange-500 text-white font-bold px-8 py-3 rounded-full hover:bg-orange-600 transition-colors w-fit mt-2"
+            className="bg-orange-500 text-white font-bold px-8 py-3 rounded-xl hover:bg-orange-600 transition-colors w-fit mt-2"
           >
             مشاهده محصولات
           </Link>

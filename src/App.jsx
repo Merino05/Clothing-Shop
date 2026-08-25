@@ -14,6 +14,8 @@ import BottomNav from "./Home components/BottomNav.jsx";
 import Cart from "./pages/Cart.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
 import BlogDetail from "./pages/BlogDetail.jsx";
+import Account from "./pages/Account.jsx";
+import HelpCenter from "./pages/HelpCenter.jsx";
 export default function App() {
   return (
     <>
@@ -32,6 +34,8 @@ export default function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/profile" element={<Account />} />
+        <Route path="/help" element={<HelpCenter />} />
       </Routes>
       <Footer />
     </>

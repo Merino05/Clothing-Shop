@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-
+import { useLocation } from "react-router-dom";
 const CartContext = createContext(null);
 
 export function CartProvider({ children }) {
@@ -12,7 +12,11 @@ export function CartProvider({ children }) {
     }
   });
   const [isOpen, setIsOpen] = useState(false);
+const location = useLocation();
 
+useEffect(() => {
+  setIsOpen(false);
+}, [location.pathname]);
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(items));
   }, [items]);

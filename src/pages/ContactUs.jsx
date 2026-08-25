@@ -144,7 +144,7 @@ export default function ContactUs() {
 
           <button
             type="submit"
-            className="bg-orange-500 text-white font-bold py-3.5 rounded-full hover:bg-orange-600 transition-colors mt-2"
+            className="bg-orange-500 text-white font-bold py-3.5 rounded-xl hover:bg-orange-600 transition-colors mt-2"
           >
             ارسال پیام
           </button>
@@ -171,14 +171,14 @@ export default function ContactUs() {
           <div className="relative z-10 flex flex-col gap-3 mt-8">
             <a
               href="tel:+989125601213"
-              className="flex items-center gap-3 bg-white/10 hover:bg-white/20 transition-colors rounded-full px-5 py-3 text-sm"
+              className="flex items-center gap-3 bg-white/10 hover:bg-white/20 transition-colors rounded-full px-5 py-3 text-sm "
             >
               <PhoneIcon className="w-4 h-4" />
               ۹۱۲۵۶۰۱۲۱۳ (۹۸)+
             </a>
             <a
               href="mailto:support@hiyoster.com"
-              className="flex items-center gap-3 bg-white/10 hover:bg-white/20 transition-colors rounded-full px-5 py-3 text-sm dir-ltr justify-end"
+              className="flex items-center gap-3 bg-white/10 hover:bg-white/20 transition-colors rounded-full px-5 py-3 text-sm  "
             >
               <MailIcon className="w-4 h-4" />
               support@hiyoster.com

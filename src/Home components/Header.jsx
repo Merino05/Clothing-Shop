@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BagIcon, CloseIcon, SearchIcon } from "./Icons.jsx";
 import { IconBtn } from "./Shared.jsx";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext.jsx";
 import CartPanelContent from "../context/CartPanelContent.jsx";
 import profileImg from "../assets/Profile.png";
@@ -15,10 +15,10 @@ const RIGHT_MENU = [
   { label: "درباره ما", path: "/about" },
 ];
 const TOP_MENU = [
-  { label: "آموزش", path: "/best-sellers" },
-  { label: "کدرهگیری", path: "/contact" },
-  { label: "شرایط ارسال", path: "/blog" },
-  { label: "مرجوعی محصول", path: "/more" },
+  { label: "آموزش", path: "/help#guide" },
+  { label: "کدرهگیری", path: "/help#tracking" },
+  { label: "شرایط ارسال", path: "/help#shipping" },
+  { label: "مرجوعی محصول", path: "/help#returns" },
 ];
 
 export default function Header() {
@@ -33,8 +33,25 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-const navigate = useNavigate();
-const [query, setQuery] = useState("");
+  const menuRef = useRef(null);
+  const buttonRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(e.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(e.target)
+      ) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+  const navigate = useNavigate();
+  const [query, setQuery] = useState("");
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -64,22 +81,16 @@ const [query, setQuery] = useState("");
       >
         <nav className="flex items-center gap-4">
           {TOP_MENU.map((m) => (
-            <NavLink
+            <Link
               key={m.path}
               to={m.path}
-              className={({ isActive }) =>
-                `transition-colors cursor-pointer ${
-                  isActive
-                    ? "text-orange-500 font-bold"
-                    : "hover:text-orange-500"
-                }`
-              }
+              className="transition-colors cursor-pointer"
             >
               {m.label}
-            </NavLink>
+            </Link>
           ))}
         </nav>
-         <form
+        <form
           onSubmit={handleSearch}
           className="hidden md:flex flex-1 max-w-md relative mx-4"
         >
@@ -112,7 +123,7 @@ const [query, setQuery] = useState("");
             WWW.HIYOSTER.COM
           </span>
         </div>
-         
+
         <nav className="hidden md:flex items-center gap-6 text-sm mx-2">
           {RIGHT_MENU.map((m) => (
             <NavLink
@@ -131,55 +142,52 @@ const [query, setQuery] = useState("");
           ))}
         </nav>
         <div className="hidden md:flex items-center gap-4 text-sm text-neutral-600">
-       
-        {/* دیو نسبی که هم آیکون هم دراپ‌داون توش هست */}
-        <div className="relative">
-          <IconBtn onClick={() => setIsOpen(!isOpen)}>
-            <div className="relative">
-              <BagIcon className="w-5 h-5" />
-              {totalCount > 0 && (
-                <span className="absolute -top-2 -left-2 bg-orange-500 text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
-                  {totalCount.toLocaleString("fa-IR")}
-                </span>
-              )}
-            </div>
-          </IconBtn>
+          {/* دیو نسبی که هم آیکون هم دراپ‌داون توش هست */}
+          <div className="relative">
+            <IconBtn onClick={() => setIsOpen(!isOpen)}>
+              <div className="relative">
+                <BagIcon className="w-5 h-5" />
+                {totalCount > 0 && (
+                  <span className="absolute -top-2 -left-2 bg-orange-500 text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                    {totalCount.toLocaleString("fa-IR")}
+                  </span>
+                )}
+              </div>
+            </IconBtn>
 
-          {/* دراپ‌داون دسکتاپ - دقیقاً همینجا، زیر آیکون */}
-          <div
-            className={`absolute top-full left-0 mt-3 w-96 bg-white rounded-2xl shadow-2xl border border-neutral-100 flex flex-col overflow-hidden transition-all duration-200 origin-top-left z-50 ${
-              isOpen
-                ? "opacity-100 scale-100 pointer-events-auto"
-                : "opacity-0 scale-95 pointer-events-none"
-            }`}
-          >
-            <div className="flex items-center justify-between px-6 py-4 border-b border-neutral-100">
-              <h2 className="font-black text-base">سبد خرید</h2>
-              <button onClick={() => setIsOpen(false)}>
-                <CloseIcon className="w-4 h-4" />
-              </button>
-            </div>
-            <CartPanelContent onNavigate={() => setIsOpen(false)} />
-          </div>
-        </div>
-
-
-          <div className="flex items-center gap-2 mr-2">
-            <div className="text-xs">
-              <p className="text-neutral-400">خوش آمدید!</p>
-              <p className="font-bold">نرگس موسوی</p>
-            </div>
-            <div className="w-8 h-8 rounded-full bg-neutral-200">
-              <img
-                src={profileImg}
-                alt=""
-                className="rounded-full"
-              />
+            {/* دراپ‌داون دسکتاپ - دقیقاً همینجا، زیر آیکون */}
+            <div
+              className={`absolute top-full left-0 mt-3 w-96 bg-white rounded-2xl shadow-2xl border border-neutral-100 flex flex-col overflow-hidden transition-all duration-200 origin-top-left z-50 ${
+                isOpen
+                  ? "opacity-100 scale-100 pointer-events-auto"
+                  : "opacity-0 scale-95 pointer-events-none"
+              }`}
+            >
+              <div className="flex items-center justify-between px-6 py-4 border-b border-neutral-100">
+                <h2 className="font-black text-base">سبد خرید</h2>
+                <button onClick={() => setIsOpen(false)}>
+                  <CloseIcon className="w-4 h-4" />
+                </button>
+              </div>
+              <CartPanelContent onNavigate={() => setIsOpen(false)} />
             </div>
           </div>
+
+          <NavLink to="/profile">
+            <div className="flex items-center gap-2 mr-2">
+              <div className="text-xs">
+                <p className="text-neutral-400">خوش آمدید!</p>
+                <p className="font-bold">نرگس موسوی</p>
+              </div>
+              <div className="w-8 h-8 rounded-full bg-neutral-200">
+                <img src={profileImg} alt="" className="rounded-full" />
+              </div>
+            </div>
+          </NavLink>
         </div>
 
         <button
+          ref={buttonRef}
           className="md:hidden text-xl transition-transform duration-300"
           style={{ transform: open ? "rotate(90deg)" : "rotate(0deg)" }}
           onClick={() => setOpen(!open)}
@@ -188,20 +196,22 @@ const [query, setQuery] = useState("");
         </button>
       </div>
       <div
+        ref={menuRef}
         className={`md:hidden mobile-menu flex flex-col gap-3 px-8 text-sm ${
           open ? "open py-4" : ""
         }`}
       >
         <form
-          onSubmit={handleSearch}
-          className=" md:flex flex-1 max-w-md relative mx-4"
-          onSubmit= {()=>setOpen(false)}
+          onSubmit={(e) => {
+            handleSearch(e);
+            setOpen(false);
+          }}
+          className="md:flex flex-1 max-w-md relative mx-4"
         >
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-             
             placeholder="جستجوی محصول..."
             className="w-full border border-neutral-200 rounded-full pl-4 pr-10 py-2 text-sm outline-none focus:border-orange-400 transition-colors"
           />
@@ -221,22 +231,14 @@ const [query, setQuery] = useState("");
               isActive ? "text-orange-500 font-bold" : ""
             }
           >
-            
             {m.label}
           </NavLink>
         ))}
         <hr />
         {TOP_MENU.map((m) => (
-          <NavLink
-            key={m.path}
-            to={m.path}
-            onClick={() => setOpen(false)}
-            className={({ isActive }) =>
-              isActive ? "text-orange-500 font-bold" : ""
-            }
-          >
+          <Link key={m.path} to={m.path} onClick={() => setOpen(false)}>
             {m.label}
-          </NavLink>
+          </Link>
         ))}
       </div>
     </header>

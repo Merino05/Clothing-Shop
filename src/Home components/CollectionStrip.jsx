@@ -24,7 +24,7 @@ export default function CollectionStrip() {
                 <div className="flex items-center gap-4">
                   <span className="font-bold text-sm">{it.name}</span>
                 </div>
-                <div className="flex items-center gap-3 text-neutral-300 group-hover:text-orange-400 transition-colors">
+                <div className="flex items-center gap-3 group-hover:text-orange-400 transition-colors">
                   <Price price={it.price} /> <HeartIcon className="w-4 h-4" />
                   <BagIcon className="w-4 h-4" />
                 </div>
