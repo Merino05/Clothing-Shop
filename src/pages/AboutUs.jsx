@@ -50,7 +50,7 @@ export default function AboutUs() {
 
       {/* بنر معرفی */}
       <div
-        className="relative rounded-3xl overflow-hidden px-8 md:px-16 py-16 md:py-24 flex flex-col items-center text-center gap-4"
+        className="relative overflow-hidden px-8 md:px-16 py-16 md:py-24 flex flex-col items-center text-center gap-4"
         style={{ background: "linear-gradient(135deg, #ff9811, #ffb84d)" }}
       >
         <span className="text-white/80 text-xs font-bold tracking-widest uppercase">
@@ -86,12 +86,12 @@ export default function AboutUs() {
       {/* متن معرفی + تصویر */}
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div
-          className="h-72 md:h-96 rounded-3xl"
+          className="h-72 md:h-96"
           style={{
             background: "linear-gradient(160deg, #d8d8d8, #b9b9b9)",
           }}
         >
-            <img src={img} alt="" className="h-72 md:h-96 rounded-3xl w-auto m-auto"/>
+            <img src={img} alt="" className="h-72 md:h-96  w-auto m-auto"/>
         </div>
         <div className="flex flex-col gap-4">
           <h2 className="text-2xl font-black relative inline-block w-fit">
@@ -110,7 +110,7 @@ export default function AboutUs() {
           </p>
           <Link
             to="/products"
-            className="bg-orange-500 text-white font-bold px-8 py-3 rounded-xl hover:bg-orange-600 transition-colors w-fit mt-2"
+            className=" text-white font-bold px-6 py-3 bg-dark hover:bg-orange-600 transition-colors w-fit mt-8"
           >
             مشاهده محصولات
           </Link>

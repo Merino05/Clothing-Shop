@@ -11,8 +11,8 @@ function BlogCard({ post, big }) {
   return (
     <Link
       to={`/blog/${post.id}`}
-      className={`group relative rounded-3xl overflow-hidden flex flex-col justify-end ${
-        big ? "min-h-[420px] md:min-h-[520px]" : "min-h-[260px]"
+      className={` group relative overflow-hidden flex flex-col justify-end ${
+        big ? "min-h-[420px] md:min-h-[544px]" : "min-h-[260px]"
       }`}
     >
       <img
@@ -92,7 +92,7 @@ export default function Blogs() {
           <button
             key={cat}
             onClick={() => setActiveCat(cat)}
-            className={`text-xs font-bold px-5 py-2.5 rounded-full border transition-colors ${
+            className={`text-xs font-bold px-5 py-2.5  border transition-colors ${
               activeCat === cat
                 ? "bg-orange-500 text-white border-orange-500"
                 : "border-neutral-200 hover:bg-neutral-100"
