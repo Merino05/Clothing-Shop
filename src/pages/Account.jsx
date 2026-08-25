@@ -13,7 +13,7 @@ import {
   TrashIcon,
   ClockIcon,
 } from "../Home components/Icons.jsx";
-import prof from "../assets/Profile.png"
+import prof from "../assets/Profile.png";
 const TABS = [
   { key: "info", label: "اطلاعات من", icon: UserIcon },
   { key: "orders", label: "سفارش‌ها", icon: BagIcon },
@@ -23,13 +23,26 @@ const TABS = [
 
 const ORDERS = [
   { id: "10245", date: "۱۰ شهریور ۱۴۰۴", status: "تحویل شده", total: 2450000 },
-  { id: "10198", date: "۲۲ مرداد ۱۴۰۴", status: "در حال ارسال", total: 1250000 },
+  {
+    id: "10198",
+    date: "۲۲ مرداد ۱۴۰۴",
+    status: "در حال ارسال",
+    total: 1250000,
+  },
   { id: "10122", date: "۵ تیر ۱۴۰۴", status: "لغو شده", total: 890000 },
 ];
 
 const ADDRESSES = [
-  { id: 1, title: "منزل", detail: "تهران، انتهای اتوبان ستاری، میدان دانشگاه، پلاک ۱۲" },
-  { id: 2, title: "محل کار", detail: "تهران، خیابان ولیعصر، بالاتر از پارک ملت" },
+  {
+    id: 1,
+    title: "منزل",
+    detail: "تهران، انتهای اتوبان ستاری، میدان دانشگاه، پلاک ۱۲",
+  },
+  {
+    id: 2,
+    title: "محل کار",
+    detail: "تهران، خیابان ولیعصر، بالاتر از پارک ملت",
+  },
 ];
 
 const STATUS_STYLE = {
@@ -43,14 +56,18 @@ function InfoTab() {
     <div className="flex flex-col gap-5">
       <div className="grid sm:grid-cols-2 gap-5">
         <div className="flex flex-col gap-2">
-          <label className="text-xs font-bold text-neutral-500">نام و نام خانوادگی</label>
+          <label className="text-xs font-bold text-neutral-500">
+            نام و نام خانوادگی
+          </label>
           <input
             defaultValue="نرگس موسوی"
             className="border border-neutral-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-orange-400 transition-colors"
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label className="text-xs font-bold text-neutral-500">شماره تماس</label>
+          <label className="text-xs font-bold text-neutral-500">
+            شماره تماس
+          </label>
           <input
             defaultValue="09125601213"
             className="border border-neutral-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-orange-400 transition-colors dir-ltr text-right"
@@ -92,10 +109,14 @@ function OrdersTab() {
             </div>
           </div>
           <div className="flex flex-col items-end gap-2">
-            <span className={`text-[11px] font-bold px-3 py-1 rounded-full ${STATUS_STYLE[o.status]}`}>
+            <span
+              className={`text-[11px] font-bold px-3 py-1 rounded-full ${STATUS_STYLE[o.status]}`}
+            >
               {o.status}
             </span>
-            <p className="text-sm font-black">{o.total.toLocaleString("fa-IR")} تومان</p>
+            <p className="text-sm font-black">
+              {o.total.toLocaleString("fa-IR")} تومان
+            </p>
           </div>
         </div>
       ))}
@@ -130,7 +151,9 @@ function AddressesTab() {
             </div>
             <div>
               <p className="font-bold text-sm">{a.title}</p>
-              <p className="text-xs text-neutral-400 mt-1 leading-6">{a.detail}</p>
+              <p className="text-xs text-neutral-400 mt-1 leading-6">
+                {a.detail}
+              </p>
             </div>
           </div>
           <button
@@ -148,20 +171,28 @@ function AddressesTab() {
           className="border border-neutral-100 rounded-2xl p-5 flex flex-col gap-4"
         >
           <div className="flex flex-col gap-2">
-            <label className="text-xs font-bold text-neutral-500">عنوان آدرس</label>
+            <label className="text-xs font-bold text-neutral-500">
+              عنوان آدرس
+            </label>
             <input
               value={newAddress.title}
-              onChange={(e) => setNewAddress({ ...newAddress, title: e.target.value })}
+              onChange={(e) =>
+                setNewAddress({ ...newAddress, title: e.target.value })
+              }
               placeholder="مثلاً منزل، محل کار"
               className="w-full border border-neutral-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-orange-400 transition-colors"
             />
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-xs font-bold text-neutral-500">آدرس کامل</label>
+            <label className="text-xs font-bold text-neutral-500">
+              آدرس کامل
+            </label>
             <textarea
               value={newAddress.detail}
-              onChange={(e) => setNewAddress({ ...newAddress, detail: e.target.value })}
+              onChange={(e) =>
+                setNewAddress({ ...newAddress, detail: e.target.value })
+              }
               rows={3}
               placeholder="استان، شهر، خیابان، پلاک..."
               className="w-full border border-neutral-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-orange-400 transition-colors resize-none"
@@ -278,12 +309,12 @@ export default function Account() {
                 {label}
               </button>
             ))}
-            <NavLink to="/login"><button className="flex items-center gap-3 text-sm font-bold px-4 py-3 rounded-xl text-red-500 hover:bg-red-50 transition-colors mt-1">
-              <LogoutIcon className="w-5 h-5" />
-              خروج از حساب
-            </button>
+            <NavLink to="/login">
+              <button className="flex items-center gap-3 text-sm font-bold px-4 py-3 rounded-xl text-red-500 hover:bg-red-50 transition-colors mt-1 w-full">
+                <LogoutIcon className="w-5 h-5" />
+                خروج از حساب
+              </button>
             </NavLink>
-            
           </nav>
         </aside>
 
