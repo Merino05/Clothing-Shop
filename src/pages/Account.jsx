@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { PRODUCTS } from "../data/products.jsx";
 import Breadcrumb from "../Product components/Breadcrumb.jsx";
 import { useAddress } from "../context/AddressContext.jsx";
@@ -278,10 +278,12 @@ export default function Account() {
                 {label}
               </button>
             ))}
-            <button className="flex items-center gap-3 text-sm font-bold px-4 py-3 rounded-xl text-red-500 hover:bg-red-50 transition-colors mt-1">
+            <NavLink to="/login"><button className="flex items-center gap-3 text-sm font-bold px-4 py-3 rounded-xl text-red-500 hover:bg-red-50 transition-colors mt-1">
               <LogoutIcon className="w-5 h-5" />
               خروج از حساب
             </button>
+            </NavLink>
+            
           </nav>
         </aside>
 

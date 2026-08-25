@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import bg from "../../public/bg.jpg"
 export default function AuthPage() {
   // صفحه ورود به صورت پیش‌فرض نمایش داده می‌شود
   const [activeTab, setActiveTab] = useState("signin");
@@ -43,12 +43,14 @@ export default function AuthPage() {
 
   return (
     <main
+    style={{
+        backgroundImage: `url(${bg})`,
+      }}
       dir="rtl"
       className="
         relative flex min-h-screen w-full
         items-center justify-center
         overflow-hidden
-        bg-[url('/bg.jpg')]
         bg-cover
         bg-center
         bg-no-repeat
