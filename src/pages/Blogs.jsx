@@ -22,7 +22,7 @@ function BlogCard({ post, big }) {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
 
-      <span className="absolute top-4 right-4 bg-orange-500 text-white text-[11px] font-bold px-3 py-1.5 rounded-full z-10">
+      <span className="absolute top-4 right-4 bg-red-500 text-white text-[11px] font-bold px-3 py-1.5 rounded-full z-10">
         {post.category}
       </span>
 
@@ -74,12 +74,12 @@ export default function Blogs() {
       />
 
       <div className="flex flex-col items-center text-center gap-3">
-        <span className="orange text-xs font-bold uppercase tracking-widest">
+        <span className="red text-xs font-bold uppercase tracking-widest">
           Magazine
         </span>
         <h1 className="text-3xl md:text-4xl font-black relative inline-block">
           وبلاگ هیوستر
-          <span className="absolute right-0 -bottom-1 w-full h-2 bg-orange-100 -z-10" />
+          <span className="absolute right-0 -bottom-1 w-full h-2 bg-red-100 -z-10" />
         </h1>
         <p className="text-neutral-400 text-sm max-w-md">
           یادداشت‌هایی درباره‌ی استایل، مد فصل و مراقبت شخصی، برای الهام گرفتن
@@ -94,7 +94,7 @@ export default function Blogs() {
             onClick={() => setActiveCat(cat)}
             className={`text-xs font-bold px-5 py-2.5  border transition-colors ${
               activeCat === cat
-                ? "bg-orange-500 text-white border-orange-500"
+                ? "bg-red-500 text-white border-red-500"
                 : "border-neutral-200 hover:bg-neutral-100"
             }`}
           >

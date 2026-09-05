@@ -47,7 +47,7 @@ export default function Footer() {
                 <li key={item.label} className="w-fit">
                   <Link
                     to={item.path}
-                    className="hover:text-orange-500 hover:font-bold transition-colors cursor-pointer"
+                    className="hover:text-red-500 hover:font-bold transition-colors cursor-pointer"
                   >
                     {item.label}
                   </Link>
@@ -64,7 +64,7 @@ export default function Footer() {
           </p>
           <Link
             to="/about"
-            className="inline-block mt-4 bg-orange text-white text-xs px-5 py-2 shadow-lg shadow-orange-200 hover:brightness-110 transition-all"
+            className="inline-block mt-4 bg-red text-white text-xs px-5 py-2 shadow-lg shadow-red-200 hover:brightness-110 transition-all"
           >
             اطلاعات بیشتر
           </Link>

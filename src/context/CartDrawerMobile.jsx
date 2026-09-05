@@ -31,7 +31,7 @@ export default function CartDrawerMobile() {
             <BagIcon className="w-5 h-5" />
             سبد خرید
             {items.length > 0 && (
-              <span className="text-xs text-orange-500 font-bold">
+              <span className="text-xs text-red-500 font-bold">
                 ({items.reduce((s, i) => s + i.qty, 0).toLocaleString("fa-IR")})
               </span>
             )}

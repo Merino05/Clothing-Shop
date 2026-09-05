@@ -148,7 +148,7 @@ export default function AuthPage() {
                   rounded-md
                   border border-gray-300
                   bg-white/75
-                  focus-within:border-orange-500
+                  focus-within:border-red-500
                   focus-within:ring-2
                   focus-within:ring-gray-200
                 "
@@ -191,7 +191,7 @@ export default function AuthPage() {
                   h-[45px]
                   w-full
                   rounded-md
-                  bg-orange-400
+                  bg-red-400
                   font-medium
                   text-white
                   shadow-sm
@@ -214,7 +214,7 @@ export default function AuthPage() {
                 onClick={() => setActiveTab("signup")}
                 className="
                   font-medium
-                  text-orange-500
+                  text-red-500
                   underline
                   underline-offset-2
                   hover:text-gray-600
@@ -254,7 +254,7 @@ export default function AuthPage() {
                     outline-none
                     placeholder:text-gray-400
                     transition-all
-                    focus:border-orange-500
+                    focus:border-red-500
                     focus:ring-2
                     focus:ring-gray-200
                   "
@@ -279,7 +279,7 @@ export default function AuthPage() {
                     outline-none
                     placeholder:text-gray-400
                     transition-all
-                    focus:border-orange-500
+                    focus:border-red-500
                     focus:ring-2
                     focus:ring-gray-200
                   "
@@ -307,7 +307,7 @@ export default function AuthPage() {
                     outline-none
                     placeholder:text-gray-400
                     transition-all
-                    focus:border-orange-500
+                    focus:border-red-500
                     focus:ring-2
                     focus:ring-gray-200
                   "
@@ -325,7 +325,7 @@ export default function AuthPage() {
                   rounded-md
                   border border-gray-300
                   bg-white/75
-                  focus-within:border-orange-500
+                  focus-within:border-red-500
                   focus-within:ring-2
                   focus-within:ring-gray-200
                 "
@@ -377,7 +377,7 @@ export default function AuthPage() {
                     duration-200
                     ${
                       newsletter
-                        ? "border-orange-400 bg-orange-400"
+                        ? "border-red-400 bg-red-400"
                         : "border-gray-900 bg-white"
                     }
                   `}
@@ -412,7 +412,7 @@ export default function AuthPage() {
                   h-[45px]
                   w-full
                   rounded-md
-                  bg-orange-400
+                  bg-red-400
                   font-medium
                   text-white
                   shadow-sm
@@ -435,7 +435,7 @@ export default function AuthPage() {
                 onClick={() => setActiveTab("signin")}
                 className="
                   font-medium
-                  text-orange-500
+                  text-red-500
                   underline
                   underline-offset-2
                   hover:text-gray-600

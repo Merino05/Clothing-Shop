@@ -39,7 +39,7 @@ export default function PromoBanner() {
             </div>
             <div className="flex flex-wrap items-center justify-start gap-4 pt-2">
               <Price price={1250000} oldPrice={2371000} />
-              <button className="bg-dark text-white text-sm px-6 py-2.5 hover:bg-orange-500 transition-colors">
+              <button className="bg-dark text-white text-sm px-6 py-2.5 hover:bg-red-500 transition-colors">
                 اطلاعات بیشتر ...
               </button>
             </div>

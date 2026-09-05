@@ -101,7 +101,7 @@ function Accordion({ items }) {
             <span className="font-bold text-sm">{item.q}</span>
             <ChevronDownIcon
               className={`w-4 h-4 flex-shrink-0 transition-transform duration-300 ${
-                open === i ? "rotate-180 orange" : "text-neutral-400"
+                open === i ? "rotate-180 red" : "text-neutral-400"
               }`}
             />
           </button>
@@ -155,13 +155,13 @@ function TrackingSection() {
             value={code}
             onChange={(e) => setCode(e.target.value)}
             placeholder="کد رهگیری سفارش خود را وارد کنید"
-            className="w-full border border-neutral-200 rounded-xl pr-10 pl-4 py-3 text-sm outline-none focus:border-orange-400 transition-colors"
+            className="w-full border border-neutral-200 rounded-xl pr-10 pl-4 py-3 text-sm outline-none focus:border-red-400 transition-colors"
           />
           <SearchIcon className="w-4 h-4 text-neutral-400 absolute right-3.5 top-1/2 -translate-y-1/2" />
         </div>
         <button
           type="submit"
-          className="bg-orange-500 text-white text-sm font-bold px-5 py-3 rounded-xl hover:bg-orange-600 transition-colors"
+          className="bg-red-500 text-white text-sm font-bold px-5 py-3 rounded-xl hover:bg-red-600 transition-colors"
         >
           پیگیری سفارش
         </button>
@@ -185,7 +185,7 @@ function TrackingSection() {
                     <div
                       className={`absolute right-1/2 top-5 w-full h-0.5 -z-10 ${
                         i <= result.currentStep
-                          ? "bg-orange-500"
+                          ? "bg-red-500"
                           : "bg-neutral-200"
                       }`}
                     />
@@ -193,7 +193,7 @@ function TrackingSection() {
                   <div
                     className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 transition-colors ${
                       done
-                        ? "bg-orange-500 text-white"
+                        ? "bg-red-500 text-white"
                         : "bg-neutral-100 text-neutral-400"
                     }`}
                   >
@@ -201,7 +201,7 @@ function TrackingSection() {
                   </div>
                   <span
                     className={`text-[10px] text-center font-bold ${
-                      done ? "orange" : "text-neutral-400"
+                      done ? "red" : "text-neutral-400"
                     }`}
                   >
                     {step.label}
@@ -274,12 +274,12 @@ export default function HelpCenter() {
       />
 
       <div className="flex flex-col items-center text-center gap-3 mt-6 mb-14">
-        <span className="orange text-xs font-bold uppercase tracking-widest">
+        <span className="red text-xs font-bold uppercase tracking-widest">
           Help Center
         </span>
         <h1 className="text-3xl md:text-4xl font-black relative inline-block">
           مرکز راهنما
-          <span className="absolute right-0 -bottom-1 w-full h-2 bg-orange-100 -z-10" />
+          <span className="absolute right-0 -bottom-1 w-full h-2 bg-red-100 -z-10" />
         </h1>
       </div>
 
@@ -307,7 +307,7 @@ export default function HelpCenter() {
                 key={title}
                 className="flex flex-col items-center text-center gap-3 border border-neutral-100 rounded-2xl p-6"
               >
-                <div className="w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center orange">
+                <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center red">
                   <Icon className="w-5 h-5" />
                 </div>
                 <h3 className="font-bold text-sm">{title}</h3>

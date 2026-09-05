@@ -29,7 +29,7 @@ export default function BestSellers() {
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl font-black relative inline-block">
             پرفروش‌ترین محصولات
-            <span className="absolute right-0 -bottom-1 w-full h-2 bg-orange-100 -z-10" />
+            <span className="absolute right-0 -bottom-1 w-full h-2 bg-red-100 -z-10" />
           </h2>
         </div>
         <ProductGrid products={topSellers} />
@@ -42,7 +42,7 @@ export default function BestSellers() {
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-2xl font-black relative inline-block">
               تخفیف‌های ویژه
-              <span className="absolute right-0 -bottom-1 w-full h-2 bg-orange-100 -z-10" />
+              <span className="absolute right-0 -bottom-1 w-full h-2 bg-red-100 -z-10" />
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">

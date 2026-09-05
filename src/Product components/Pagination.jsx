@@ -29,7 +29,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
       <button
         onClick={goPrev}
         disabled={currentPage === 1}
-        className="w-9 h-9 rounded-full border border-orange-400 text-orange-500 hover:bg-orange-500 hover:text-white transition-colors disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-orange-500 disabled:cursor-not-allowed"
+        className="w-9 h-9 rounded-full border border-red-400 text-red-500 hover:bg-red-500 hover:text-white transition-colors disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-red-500 disabled:cursor-not-allowed"
       >
         ‹
       </button>
@@ -39,7 +39,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
           onClick={() => goToPage(page)}
           className={`w-9 h-9 rounded-full border text-sm font-bold transition-colors ${
             page === currentPage
-              ? "bg-orange-500 text-white border-orange-500"
+              ? "bg-red-500 text-white border-red-500"
               : "border-neutral-200 hover:bg-neutral-100"
           }`}
         >
@@ -49,7 +49,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
       <button
         onClick={goNext}
         disabled={currentPage === totalPages}
-        className="w-9 h-9 rounded-full border border-orange-400 text-orange-500 hover:bg-orange-500 hover:text-white transition-colors disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-orange-500 disabled:cursor-not-allowed"
+        className="w-9 h-9 rounded-full border border-red-400 text-red-500 hover:bg-red-500 hover:text-white transition-colors disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-red-500 disabled:cursor-not-allowed"
       >
         ›
       </button>

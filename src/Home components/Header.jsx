@@ -99,7 +99,7 @@ export default function Header() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="جستجوی محصول..."
-            className="w-full border border-neutral-200 rounded-full pl-4 pr-10 py-2 text-sm outline-none focus:border-orange-400 transition-colors"
+            className="w-full border border-neutral-200 rounded-full pl-4 pr-10 py-2 text-sm outline-none focus:border-red-400 transition-colors"
           />
           <button
             type="submit"
@@ -132,8 +132,8 @@ export default function Header() {
               className={({ isActive }) =>
                 `underline-grow transition-colors ${
                   isActive
-                    ? "text-orange-500 font-bold"
-                    : "hover:text-orange-500"
+                    ? "text-red-500 font-bold"
+                    : "hover:text-red-500"
                 }`
               }
             >
@@ -148,7 +148,7 @@ export default function Header() {
               <div className="relative">
                 <BagIcon className="w-5 h-5" />
                 {totalCount > 0 && (
-                  <span className="absolute -top-2 -left-2 bg-orange-500 text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                  <span className="absolute -top-2 -left-2 bg-red-500 text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
                     {totalCount.toLocaleString("fa-IR")}
                   </span>
                 )}
@@ -213,7 +213,7 @@ export default function Header() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="جستجوی محصول..."
-            className="w-full border border-neutral-200 rounded-full pl-4 pr-10 py-2 text-sm outline-none focus:border-orange-400 transition-colors"
+            className="w-full border border-neutral-200 rounded-full pl-4 pr-10 py-2 text-sm outline-none focus:border-red-400 transition-colors"
           />
           <button
             type="submit"
@@ -228,7 +228,7 @@ export default function Header() {
             to={m.path}
             onClick={() => setOpen(false)}
             className={({ isActive }) =>
-              isActive ? "text-orange-500 font-bold" : ""
+              isActive ? "text-red-500 font-bold" : ""
             }
           >
             {m.label}

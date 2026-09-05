@@ -21,19 +21,19 @@ export default function BottomNav() {
           end={path === "/"}
           className={({ isActive }) =>
             `relative flex flex-col items-center gap-1 px-3 py-1 text-[10px] transition-colors ${
-              isActive ? "text-orange-500" : "text-neutral-400"
+              isActive ? "text-red-500" : "text-neutral-400"
             }`
           }
         >
           {({ isActive }) => (
             <>
               {isActive && (
-                <span className="absolute -top-2 w-7 h-[3px] bg-orange-500 rounded-full" />
+                <span className="absolute -top-2 w-7 h-[3px] bg-red-500 rounded-full" />
               )}
               <div className="relative">
                 <Icon className="w-5 h-5" />
                 {isCart && totalCount > 0 && (
-                  <span className="absolute -top-1.5 -left-1.5 bg-orange-500 text-white text-[8px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center">
+                  <span className="absolute -top-1.5 -left-1.5 bg-red-500 text-white text-[8px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center">
                     {totalCount.toLocaleString("fa-IR")}
                   </span>
                 )}

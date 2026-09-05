@@ -40,7 +40,7 @@ export default function ProductInfo({ product }) {
               onClick={() => setSelectedSize(s)}
               className={`w-10 h-10 text-sm border rounded-lg transition-colors ${
                 selectedSize === s
-                  ? "bg-orange-500 text-white border-orange-500"
+                  ? "bg-red-500 text-white border-red-500"
                   : "hover:bg-neutral-100"
               }`}
             >
@@ -61,7 +61,7 @@ export default function ProductInfo({ product }) {
               style={{ background: c }}
               className={`w-8 h-8 rounded-full border-2 transition-all ${
                 selectedColor === c
-                  ? "border-orange-500 scale-110"
+                  ? "border-red-500 scale-110"
                   : "border-neutral-200"
               }`}
             />
@@ -75,7 +75,7 @@ export default function ProductInfo({ product }) {
         <div className="flex items-center gap-3 border rounded-full w-fit px-2 py-1">
           <button
             onClick={() => setQty((q) => Math.max(1, q - 1))}
-            className="w-7 h-7 flex items-center justify-center hover:text-orange-500 transition-colors"
+            className="w-7 h-7 flex items-center justify-center hover:text-red-500 transition-colors"
           >
             −
           </button>
@@ -84,7 +84,7 @@ export default function ProductInfo({ product }) {
           </span>
           <button
             onClick={() => setQty((q) => q + 1)}
-            className="w-7 h-7 flex items-center justify-center hover:text-orange-500 transition-colors"
+            className="w-7 h-7 flex items-center justify-center hover:text-red-500 transition-colors"
           >
             +
           </button>
@@ -96,8 +96,8 @@ export default function ProductInfo({ product }) {
         <button
           onClick={handleAddToCart}
           disabled={!selectedSize || !selectedColor}
-          className={`flex-1 flex items-center justify-center gap-2 bg-orange-500 text-white font-bold py-3 rounded-md transition-colors
-    ${!selectedSize || !selectedColor ? "opacity-50 " : "hover:bg-orange-600"}
+          className={`flex-1 flex items-center justify-center gap-2 bg-red-500 text-white font-bold py-3 rounded-md transition-colors
+    ${!selectedSize || !selectedColor ? "opacity-50 " : "hover:bg-red-600"}
   `}
         >
           <BagIcon className="w-5 h-5" />

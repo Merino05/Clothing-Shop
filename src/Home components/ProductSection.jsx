@@ -63,7 +63,7 @@ export default function ProductSection({ title, subtitle }) {
         <div className="text-right">
           <h2 className="text-2xl font-black relative inline-block">
             {title}
-            <span className="absolute right-0 -bottom-1 w-full h-2 bg-orange-100 -z-10" />
+            <span className="absolute right-0 -bottom-1 w-full h-2 bg-red-100 -z-10" />
           </h2>
           <p className="text-neutral-400 text-xs mt-2">{subtitle}</p>
         </div>
@@ -74,7 +74,7 @@ export default function ProductSection({ title, subtitle }) {
               onClick={() => setActiveTab(b)}
               className={`text-xs font-bold px-6 py-2.5 border transition-colors ${
                 activeTab === b
-                  ? "bg-orange-500 text-white border-orange-500"
+                  ? "bg-red-500 text-white border-red-500"
                   : "hover:bg-neutral-100"
               }`}
             >
@@ -84,13 +84,13 @@ export default function ProductSection({ title, subtitle }) {
           <div className="flex gap-1">
             <button
               onClick={() => scroll("prev")}
-              className="w-9 h-9 rounded-full border border-orange-400 text-orange-500 hover:bg-orange-500 hover:text-white transition-colors"
+              className="w-9 h-9 rounded-full border border-red-400 text-red-500 hover:bg-red-500 hover:text-white transition-colors"
             >
               ‹
             </button>
             <button
               onClick={() => scroll("next")}
-              className="w-9 h-9 rounded-full border border-orange-400 text-orange-500 hover:bg-orange-500 hover:text-white transition-colors"
+              className="w-9 h-9 rounded-full border border-red-400 text-red-500 hover:bg-red-500 hover:text-white transition-colors"
             >
               ›
             </button>

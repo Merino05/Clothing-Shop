@@ -43,7 +43,7 @@ export default function CartDrawer() {
             <BagIcon className="w-5 h-5" />
             سبد خرید
             {items.length > 0 && (
-              <span className="text-xs text-orange-500 font-bold">
+              <span className="text-xs text-red-500 font-bold">
                 ({items.reduce((s, i) => s + i.qty, 0).toLocaleString("fa-IR")})
               </span>
             )}
@@ -89,7 +89,7 @@ export default function CartDrawer() {
                     <div className="flex items-center gap-2 border rounded-full px-1.5 py-0.5">
                       <button
                         onClick={() => updateQty(item.key, item.qty - 1)}
-                        className="w-5 h-5 flex items-center justify-center hover:text-orange-500"
+                        className="w-5 h-5 flex items-center justify-center hover:text-red-500"
                       >
                         −
                       </button>
@@ -98,7 +98,7 @@ export default function CartDrawer() {
                       </span>
                       <button
                         onClick={() => updateQty(item.key, item.qty + 1)}
-                        className="w-5 h-5 flex items-center justify-center hover:text-orange-500"
+                        className="w-5 h-5 flex items-center justify-center hover:text-red-500"
                       >
                         +
                       </button>
@@ -130,7 +130,7 @@ export default function CartDrawer() {
             <Link
               to="/cart"
               onClick={() => setIsOpen(false)}
-              className="bg-orange-500 text-white text-center font-bold py-3 rounded-full hover:bg-orange-600 transition-colors"
+              className="bg-red-500 text-white text-center font-bold py-3 rounded-full hover:bg-red-600 transition-colors"
             >
               ادامه فرآیند خرید
             </Link>

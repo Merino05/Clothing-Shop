@@ -47,7 +47,7 @@ const ADDRESSES = [
 
 const STATUS_STYLE = {
   "تحویل شده": "bg-green-50 text-green-600",
-  "در حال ارسال": "bg-orange-50 orange",
+  "در حال ارسال": "bg-red-50 red",
   "لغو شده": "bg-red-50 text-red-500",
 };
 
@@ -61,7 +61,7 @@ function InfoTab() {
           </label>
           <input
             defaultValue="نرگس موسوی"
-            className="border border-neutral-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-orange-400 transition-colors"
+            className="border border-neutral-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-red-400 transition-colors"
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -70,18 +70,18 @@ function InfoTab() {
           </label>
           <input
             defaultValue="09125601213"
-            className="border border-neutral-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-orange-400 transition-colors dir-ltr text-right"
+            className="border border-neutral-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-red-400 transition-colors dir-ltr text-right"
           />
         </div>
         <div className="flex flex-col gap-2 sm:col-span-2">
           <label className="text-xs font-bold text-neutral-500">ایمیل</label>
           <input
             defaultValue="narges.mousavi@email.com"
-            className="border border-neutral-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-orange-400 transition-colors dir-ltr text-right"
+            className="border border-neutral-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-red-400 transition-colors dir-ltr text-right"
           />
         </div>
       </div>
-      <button className="bg-orange-500 text-white font-bold px-4 py-2 rounded-xl hover:bg-orange-600 transition-colors w-fit text-sm">
+      <button className="bg-red-500 text-white font-bold px-4 py-2 rounded-xl hover:bg-red-600 transition-colors w-fit text-sm">
         ذخیره تغییرات
       </button>
     </div>
@@ -97,7 +97,7 @@ function OrdersTab() {
           className="flex items-center justify-between border border-neutral-100 rounded-2xl p-5 hover:shadow-md transition-shadow"
         >
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center orange">
+            <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center red">
               <BagIcon className="w-5 h-5" />
             </div>
             <div>
@@ -146,7 +146,7 @@ function AddressesTab() {
           className="flex items-start justify-between gap-2 border border-neutral-100 rounded-2xl p-5"
         >
           <div className="flex items-start gap-4">
-            <div className="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center orange flex-shrink-0">
+            <div className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center red flex-shrink-0">
               <LocationIcon className="w-5 h-5" />
             </div>
             <div>
@@ -180,7 +180,7 @@ function AddressesTab() {
                 setNewAddress({ ...newAddress, title: e.target.value })
               }
               placeholder="مثلاً منزل، محل کار"
-              className="w-full border border-neutral-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-orange-400 transition-colors"
+              className="w-full border border-neutral-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-red-400 transition-colors"
             />
           </div>
 
@@ -195,14 +195,14 @@ function AddressesTab() {
               }
               rows={3}
               placeholder="استان، شهر، خیابان، پلاک..."
-              className="w-full border border-neutral-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-orange-400 transition-colors resize-none"
+              className="w-full border border-neutral-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-red-400 transition-colors resize-none"
             />
           </div>
 
           <div className="flex items-center gap-3">
             <button
               type="submit"
-              className="bg-orange-500 text-white font-bold px-4 py-2 rounded-xl hover:bg-orange-600 transition-colors text-sm"
+              className="bg-red-500 text-white font-bold px-4 py-2 rounded-xl hover:bg-red-600 transition-colors text-sm"
             >
               ذخیره آدرس
             </button>
@@ -221,7 +221,7 @@ function AddressesTab() {
       ) : (
         <button
           onClick={() => setShowForm(true)}
-          className="border border-dashed border-orange-300 orange font-bold rounded-2xl py-3 hover:bg-orange-50 transition-colors"
+          className="border border-dashed border-red-300 red font-bold rounded-2xl py-3 hover:bg-red-50 transition-colors"
         >
           + افزودن آدرس جدید
         </button>
@@ -245,7 +245,7 @@ function FavoritesTab() {
           </div>
           <div className="min-w-0">
             <p className="font-bold text-sm ">{p.title}</p>
-            <p className="orange text-sm font-black mt-1">
+            <p className="red text-sm font-black mt-1">
               {p.price.toLocaleString("fa-IR")} تومان
             </p>
           </div>
@@ -284,7 +284,7 @@ export default function Account() {
                 alt=""
                 className="w-20 h-20 rounded-full object-cover"
               />
-              <button className="absolute -bottom-1 -left-1 w-7 h-7 rounded-full bg-orange-500 text-white flex items-center justify-center border-2 border-white">
+              <button className="absolute -bottom-1 -left-1 w-7 h-7 rounded-full bg-red-500 text-white flex items-center justify-center border-2 border-white">
                 <EditIcon className="w-3.5 h-3.5" />
               </button>
             </div>
@@ -301,7 +301,7 @@ export default function Account() {
                 onClick={() => setActiveTab(key)}
                 className={`flex items-center gap-3 text-sm font-bold px-4 py-3 rounded-xl transition-colors ${
                   activeTab === key
-                    ? "bg-orange-500 text-white"
+                    ? "bg-red-500 text-white"
                     : "text-neutral-500 hover:bg-neutral-50"
                 }`}
               >

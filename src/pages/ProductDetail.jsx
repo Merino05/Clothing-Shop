@@ -13,7 +13,7 @@ export default function ProductDetail() {
     return (
       <div className="max-w-7xl mx-auto px-8 pt-40 pb-16 text-center">
         <p className="text-neutral-400">محصول مورد نظر پیدا نشد.</p>
-        <Link to="/products" className="text-orange-500 font-bold hover:underline">
+        <Link to="/products" className="text-red-500 font-bold hover:underline">
           بازگشت به محصولات
         </Link>
       </div>

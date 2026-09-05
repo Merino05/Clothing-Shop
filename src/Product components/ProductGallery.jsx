@@ -23,8 +23,8 @@ export default function ProductGallery({ images }) {
               onClick={() => setActive(i)}
               className={`w-20 h-20 rounded-xl overflow-hidden border-2 flex-shrink-0 transition-all ${
                 active === i
-                  ? "border-orange-500 scale-95"
-                  : "border-neutral-200 hover:border-orange-300"
+                  ? "border-red-500 scale-95"
+                  : "border-neutral-200 hover:border-red-300"
               }`}
             >
               <img

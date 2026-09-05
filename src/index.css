@@ -1,21 +1,21 @@
 * { font-family: 'Vazirmatn', sans-serif; }
 html, body { direction: rtl; text-align: right; background: #fff; color: #343434; margin: 0; }
 
-.orange { color: #ff9811; }
-.bg-orange { background: #ff9811; }
+.red { color: #a10000; }
+.bg-red { background: #850000; }
 .bg-dark { background: #454545; }
 
 .figure { filter: grayscale(0); transition: filter .5s ease, transform .6s ease; }
 .cardhov:hover .figure { filter: grayscale(1); transform: scale(1.05); }
-.cardhov .grad { background: linear-gradient(to top, #ff9811 0%, rgba(255,152,17,0) 100%); opacity: 0; transition: opacity .4s; }
+.cardhov .grad { background: linear-gradient(to top, #850000 0%, rgba(255,152,17,0) 100%); opacity: 0; transition: opacity .4s; }
 .cardhov:hover .grad { opacity: .85; }
 .cardhov .ctitle { transition: color .3s; }
-.cardhov:hover .ctitle { color: #ff9811; }
+.cardhov:hover .ctitle { color: #850000; }
 .cardhov { transition: box-shadow .3s; }
 .cardhov:hover { box-shadow: 0 30px 50px -30px rgba(0,0,0,.25); }
 
 .underline-grow { position: relative; }
-.underline-grow::after { content: ''; position: absolute; right: 0; bottom: -4px; height: 2px; width: 0; background: #ff9811; transition: width .3s; }
+.underline-grow::after { content: ''; position: absolute; right: 0; bottom: -4px; height: 2px; width: 0; background: #ff1111; transition: width .3s; }
 .underline-grow:hover::after { width: 100%; }
 
 @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
@@ -40,7 +40,7 @@ html, body { direction: rtl; text-align: right; background: #fff; color: #343434
   transform: translateY(0);
 }
 @keyframes pulseOnce {
-  0% { transform: scale(1.15); border-color: #ff9811; }
+  0% { transform: scale(1.15); border-color: #ff1111; }
   100% { transform: scale(1); }
 }
 .animate-pulseOnce {

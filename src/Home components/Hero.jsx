@@ -79,10 +79,10 @@ export default function Hero() {
       {/* بخش پایین: دکمه‌ها و تایمر */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pb-4 sm:pb-6 md:pb-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
         <div className="flex flex-wrap justify-center sm:justify-start  ">
-          <button className="bg-orange text-white text-xs sm:text-sm px-3 sm:px-5 py-2 sm:py-3 font-bold">
+          <button className="bg-red text-white text-xs sm:text-sm px-3 sm:px-5 py-2 sm:py-3 font-bold">
             تومان ۱.۵۷۰.۰۰۰
           </button>
-          <button className="bg-dark text-white text-xs sm:text-sm px-4 sm:px-6 py-2 sm:py-3 hover:bg-orange-500 transition-colors">
+          <button className="bg-dark text-white text-xs sm:text-sm px-4 sm:px-6 py-2 sm:py-3 hover:bg-red-500 transition-colors">
             اطلاعات بیشتر ...
           </button>
         </div>

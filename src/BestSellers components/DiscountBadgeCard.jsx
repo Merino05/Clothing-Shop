@@ -8,7 +8,7 @@ export default function DiscountBadgeCard({ p }) {
   return (
     <div className="cardhov flex flex-col items-center gap-3 w-full py-4 relative">
       {discountPercent > 0 && (
-        <span className="absolute top-4 right-0 z-10 bg-orange-500 text-white text-xs font-bold px-2.5 py-1 rounded-l-lg mt-3">
+        <span className="absolute top-4 right-0 z-10 bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-l-lg mt-3">
           {discountPercent.toLocaleString("fa-IR")}% تخفیف
         </span>
       )}
@@ -26,7 +26,7 @@ export default function DiscountBadgeCard({ p }) {
       <div className="flex flex-col items-center gap-1 px-4 text-center">
         <p className="text-[11px] text-neutral-400 uppercase">{p.cat}</p>
         <Link to={`/products/${p.id}`}>
-          <p className="ctitle font-extrabold text-sm hover:text-orange-500 transition-colors">
+          <p className="ctitle font-extrabold text-sm hover:text-red-500 transition-colors">
             {p.title}
           </p>
         </Link>

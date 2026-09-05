@@ -2,7 +2,7 @@ export function Price({ price, oldPrice, big }) {
   return (
     <div className="flex flex-col items-center leading-tight">
       <p className="flex items-center gap-1">
-        <span className={"orange font-extrabold " + (big ? "text-2xl" : "text-lg")}>
+        <span className={" font-extrabold " + (big ? "text-2xl" : "text-lg")}>
           {price.toLocaleString('fa-IR')}
         </span>
         <span className="text-neutral-400 text-xs">تومان</span>
@@ -20,7 +20,7 @@ export function IconBtn({ children, onClick }) {
   return (
     <button
       onClick={onClick}
-      className="heartbeat text-neutral-500 hover:text-orange-500 transition-colors"
+      className="heartbeat text-neutral-500 hover:text-red-500 transition-colors"
     >
       {children}
     </button>

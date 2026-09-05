@@ -24,12 +24,12 @@ const costom = [
         {costom.map((i) => (
           <div
             key={i.url}
-            className="w-20 h-20 rounded-full bg-neutral-100 hover:bg-orange-100 transition-colors overflow-hidden shadow"
+            className="w-20 h-20 rounded-full bg-neutral-100 hover:bg-red-100 transition-colors overflow-hidden shadow"
           >
             <img
               src={i.url}
               alt="profile"
-              className="w-full h-full object-cover hover:bg-orange-100"
+              className="w-full h-full object-cover hover:bg-red-100"
             />
           </div>
         ))}

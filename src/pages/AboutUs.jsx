@@ -75,7 +75,7 @@ export default function AboutUs() {
             key={s.label}
             className="flex flex-col items-center gap-2 border border-neutral-100 rounded-2xl py-8 hover:shadow-md  hover:-translate-y-1 transition-all duration-300"
           >
-            <span className="orange text-2xl md:text-3xl font-black">
+            <span className="red text-2xl md:text-3xl font-black">
               {s.value}
             </span>
             <span className="text-xs text-neutral-400">{s.label}</span>
@@ -96,7 +96,7 @@ export default function AboutUs() {
         <div className="flex flex-col gap-4">
           <h2 className="text-2xl font-black relative inline-block w-fit">
             چرا هیوستر؟
-            <span className="absolute right-0 -bottom-1 w-full h-2 bg-orange-100 -z-10" />
+            <span className="absolute right-0 -bottom-1 w-full h-2 bg-red-100 -z-10" />
           </h2>
           <p className="text-sm text-neutral-500 leading-8">
             هیوستر با هدف ارائه‌ی پوشاکی باکیفیت، به‌روز و مقرون‌به‌صرفه برای
@@ -110,7 +110,7 @@ export default function AboutUs() {
           </p>
           <Link
             to="/products"
-            className=" text-white font-bold px-6 py-3 bg-dark hover:bg-orange-600 transition-colors w-fit mt-8"
+            className=" text-white font-bold px-6 py-3 bg-dark hover:bg-red-600 transition-colors w-fit mt-8"
           >
             مشاهده محصولات
           </Link>
@@ -122,7 +122,7 @@ export default function AboutUs() {
         <div className="text-center mb-10">
           <h2 className="text-2xl font-black relative inline-block">
             چرا ما را انتخاب کنید
-            <span className="absolute right-0 -bottom-1 w-full h-2 bg-orange-100 -z-10" />
+            <span className="absolute right-0 -bottom-1 w-full h-2 bg-red-100 -z-10" />
           </h2>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
@@ -131,7 +131,7 @@ export default function AboutUs() {
               key={title}
               className="flex flex-col items-center text-center gap-3 border border-neutral-100 rounded-2xl p-6 hover:shadow-md  hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="w-14 h-14 rounded-full bg-orange-50 flex items-center justify-center orange">
+              <div className="w-14 h-14 rounded-full bg-red-50 flex items-center justify-center red">
                 <Icon className="w-6 h-6" />
               </div>
               <h3 className="font-bold text-sm">{title}</h3>

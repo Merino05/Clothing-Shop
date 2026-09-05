@@ -28,7 +28,7 @@ export default function CartPanelContent({ onNavigate }) {
               </div>
               <div className="flex-1 min-w-0">
                 <Link to={`/products/${item.id}`} onClick={onNavigate}>
-                  <p className="text-sm font-bold truncate hover:text-orange-500 transition-colors">
+                  <p className="text-sm font-bold truncate hover:text-red-500 transition-colors">
                     {item.title}
                   </p>
                 </Link>
@@ -52,7 +52,7 @@ export default function CartPanelContent({ onNavigate }) {
                   <div className="flex items-center gap-2 border rounded-full px-1.5 py-0.5">
                     <button
                       onClick={() => updateQty(item.key, item.qty - 1)}
-                      className="w-5 h-5 flex items-center justify-center hover:text-orange-500"
+                      className="w-5 h-5 flex items-center justify-center hover:text-red-500"
                     >
                       −
                     </button>
@@ -61,7 +61,7 @@ export default function CartPanelContent({ onNavigate }) {
                     </span>
                     <button
                       onClick={() => updateQty(item.key, item.qty + 1)}
-                      className="w-5 h-5 flex items-center justify-center hover:text-orange-500"
+                      className="w-5 h-5 flex items-center justify-center hover:text-red-500"
                     >
                       +
                     </button>
@@ -92,7 +92,7 @@ export default function CartPanelContent({ onNavigate }) {
           </div>
           <Link
             to="/cart"
-            className="bg-orange-500 text-white text-center font-bold py-3 rounded-md hover:bg-orange-600 transition-colors"
+            className="bg-red-500 text-white text-center font-bold py-3 rounded-md hover:bg-red-600 transition-colors"
           >
             ادامه فرآیند خرید
           </Link>

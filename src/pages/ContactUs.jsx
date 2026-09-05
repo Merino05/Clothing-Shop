@@ -56,12 +56,12 @@ export default function ContactUs() {
       />
 
       <div className="flex flex-col items-center text-center gap-3">
-        <span className="orange text-xs font-bold uppercase tracking-widest">
+        <span className="red text-xs font-bold uppercase tracking-widest">
           Get In Touch
         </span>
         <h1 className="text-3xl md:text-4xl font-black relative inline-block">
           در ارتباط باشید
-          <span className="absolute right-0 -bottom-1 w-full h-2 bg-orange-100 -z-10" />
+          <span className="absolute right-0 -bottom-1 w-full h-2 bg-red-100 -z-10" />
         </h1>
         <p className="text-neutral-400 text-sm max-w-md">
           سوالی دارید؟ پیشنهادی برای بهتر شدن دارید؟ خوشحال می‌شویم صدای شما
@@ -75,7 +75,7 @@ export default function ContactUs() {
             key={title}
             className="flex flex-col items-center text-center gap-3 border border-neutral-100 rounded-2xl p-6 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
           >
-            <div className="w-14 h-14 rounded-full bg-orange-50 flex items-center justify-center orange">
+            <div className="w-14 h-14 rounded-full bg-red-50 flex items-center justify-center red">
               <Icon className="w-6 h-6" />
             </div>
             <h3 className="font-bold text-sm">{title}</h3>
@@ -107,7 +107,7 @@ export default function ContactUs() {
                 onChange={handleChange}
                 required
                 placeholder="مثلاً نرگس موسوی"
-                className="border border-neutral-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-orange-400 transition-colors"
+                className="border border-neutral-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-red-400 transition-colors"
               />
             </div>
 
@@ -122,7 +122,7 @@ export default function ContactUs() {
                 onChange={handleChange}
                 required
                 placeholder="example@email.com"
-                className="border border-neutral-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-orange-400 transition-colors dir-ltr text-right"
+                className="border border-neutral-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-red-400 transition-colors dir-ltr text-right"
               />
             </div>
           </div>
@@ -138,13 +138,13 @@ export default function ContactUs() {
               required
               rows={5}
               placeholder="پیام خود را اینجا بنویسید..."
-              className="border border-neutral-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-orange-400 transition-colors resize-none"
+              className="border border-neutral-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-red-400 transition-colors resize-none"
             />
           </div>
 
           <button
             type="submit"
-            className="bg-orange-500 text-white font-bold py-3.5 rounded-xl hover:bg-orange-600 transition-colors mt-2"
+            className="bg-red-500 text-white font-bold py-3.5 rounded-xl hover:bg-red-600 transition-colors mt-2"
           >
             ارسال پیام
           </button>

@@ -16,7 +16,7 @@ export default function Cart() {
         </p>
         <Link
           to="/products"
-          className="bg-orange-500 text-white font-bold px-8 py-3 rounded-full hover:bg-orange-600 transition-colors mt-2"
+          className="bg-red-500 text-white font-bold px-8 py-3 rounded-full hover:bg-red-600 transition-colors mt-2"
         >
           مشاهده محصولات
         </Link>
@@ -37,7 +37,7 @@ export default function Cart() {
         <h1 className="text-2xl font-black">سبد خرید</h1>
         <button
           onClick={clearCart}
-          className="flex items-center gap-1.5 text-xs text-orange-500 font-bold border border-orange-200 bg-orange-50 hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-colors px-3 py-1.5 rounded-full"
+          className="flex items-center gap-1.5 text-xs text-red-500 font-bold border border-red-200 bg-red-50 hover:bg-red-500 hover:text-white hover:border-red-500 transition-colors px-3 py-1.5 rounded-full"
         >
           <TrashIcon className="w-3.5 h-3.5" />
           خالی کردن سبد
@@ -59,7 +59,7 @@ export default function Cart() {
 
     <div className="flex-1 min-w-0">
       <Link to={`/products/${item.id}`}>
-        <p className="font-bold text-sm hover:text-orange-500 transition-colors">
+        <p className="font-bold text-sm hover:text-red-500 transition-colors">
           {item.title}
         </p>
       </Link>
@@ -96,7 +96,7 @@ export default function Cart() {
     <div className="flex items-center gap-3 border rounded-full px-2 py-1">
       <button
         onClick={() => updateQty(item.key, item.qty - 1)}
-        className="w-7 h-7 flex items-center justify-center hover:text-orange-500 transition-colors"
+        className="w-7 h-7 flex items-center justify-center hover:text-red-500 transition-colors"
       >
         −
       </button>
@@ -105,13 +105,13 @@ export default function Cart() {
       </span>
       <button
         onClick={() => updateQty(item.key, item.qty + 1)}
-        className="w-7 h-7 flex items-center justify-center hover:text-orange-500 transition-colors"
+        className="w-7 h-7 flex items-center justify-center hover:text-red-500 transition-colors"
       >
         +
       </button>
     </div>
 
-    <p className="font-black orange text-sm md:text-base">
+    <p className="font-black red text-sm md:text-base">
   {(item.price * item.qty).toLocaleString("fa-IR")} تومان
 </p>
   </div>
@@ -141,21 +141,21 @@ export default function Cart() {
 
             <div className="flex items-center justify-between">
               <span className="font-bold">مبلغ قابل پرداخت</span>
-              <span className="font-black text-lg orange">
+              <span className="font-black text-lg red">
                 {totalPrice.toLocaleString("fa-IR")} تومان
               </span>
             </div>
 
             <Link
               to="/checkout"
-              className="bg-orange-500 text-sm text-white text-center font-bold py-3 rounded-md hover:bg-orange-600 transition-colors mt-2"
+              className="bg-red-500 text-sm text-white text-center font-bold py-3 rounded-md hover:bg-red-600 transition-colors mt-2"
             >
               ادامه فرآیند خرید
             </Link>
 
             <Link
               to="/products"
-              className="text-center text-xs text-neutral-400 hover:text-orange-500 transition-colors"
+              className="text-center text-xs text-neutral-400 hover:text-red-500 transition-colors"
             >
               ادامه خرید محصولات دیگر
             </Link>

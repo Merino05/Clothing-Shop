@@ -26,7 +26,7 @@ export default function BlogDetail() {
     return (
       <div className="max-w-3xl mx-auto px-8 pt-40 pb-16 text-center">
         <p className="text-neutral-400">این پست پیدا نشد.</p>
-        <Link to="/blog" className="text-orange-500 font-bold hover:underline">
+        <Link to="/blog" className="text-red-500 font-bold hover:underline">
           بازگشت به وبلاگ
         </Link>
       </div>
@@ -41,7 +41,7 @@ export default function BlogDetail() {
     <>
       <div className="fixed top-0 inset-x-0 h-[3px] bg-neutral-100 z-[60]">
         <div
-          className="h-full bg-orange-500 transition-[width] duration-150 ease-out"
+          className="h-full bg-red-500 transition-[width] duration-150 ease-out"
           style={{ width: `${progress}%` }}
         />
       </div>
@@ -56,7 +56,7 @@ export default function BlogDetail() {
         />
 
         <RevealOnScroll className="mt-6 flex flex-col items-center text-center gap-4">
-          <span className="bg-orange-500 text-white text-[11px] font-bold px-3 py-1.5 rounded-full">
+          <span className="bg-red-500 text-white text-[11px] font-bold px-3 py-1.5 rounded-full">
             {post.category}
           </span>
           <h1 className="text-2xl md:text-4xl font-black leading-snug max-w-2xl">
@@ -99,7 +99,7 @@ export default function BlogDetail() {
               key={i}
               className={`text-[15px] text-neutral-600 leading-9 ${
                 i === 0
-                  ? "first-letter:text-6xl first-letter:font-black first-letter:orange first-letter:float-right first-letter:leading-[0.8] first-letter:ml-3 first-letter:mt-1"
+                  ? "first-letter:text-6xl first-letter:font-black first-letter:red first-letter:float-right first-letter:leading-[0.8] first-letter:ml-3 first-letter:mt-1"
                   : ""
               }`}
             >
@@ -151,7 +151,7 @@ export default function BlogDetail() {
 
         <Link
           to="/blog"
-          className="flex items-center gap-2 text-sm font-bold orange hover:underline mt-14 w-fit"
+          className="flex items-center gap-2 text-sm font-bold red hover:underline mt-14 w-fit"
         >
           <ArrowLeftIcon className="w-4 h-4" />
           بازگشت به همه‌ی مطالب

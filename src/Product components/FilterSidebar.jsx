@@ -53,7 +53,7 @@ export default function FilterSidebar() {
                 type="checkbox"
                 checked={selectedCats.includes(cat)}
                 onChange={() => toggleCat(cat)}
-                className="accent-orange-500"
+                className="accent-red-500"
               />
               {cat}
             </label>
@@ -70,7 +70,7 @@ export default function FilterSidebar() {
               onClick={() => setSelectedSize(s === selectedSize ? null : s)}
               className={`w-9 h-9 text-xs border transition-colors ${
                 selectedSize === s
-                  ? "bg-orange-500 text-white border-orange-500"
+                  ? "bg-red-500 text-white border-red-500"
                   : "hover:bg-neutral-100"
               }`}
             >
@@ -90,7 +90,7 @@ export default function FilterSidebar() {
               style={{ background: c }}
               className={`w-7 h-7 rounded-full border-2 transition-all ${
                 selectedColor === c
-                  ? "border-orange-500 scale-110"
+                  ? "border-red-500 scale-110"
                   : "border-neutral-200"
               }`}
             />
@@ -107,7 +107,7 @@ export default function FilterSidebar() {
           step="100000"
           value={price}
           onChange={(e) => setPrice(Number(e.target.value))}
-          className="w-full accent-orange-500"
+          className="w-full accent-red-500"
         />
         <p className="text-xs text-neutral-400 mt-2">
           تا {price.toLocaleString("fa-IR")} تومان
@@ -116,7 +116,7 @@ export default function FilterSidebar() {
       {hasActiveFilters && (
         <button
           onClick={clearFilters}
-          className="flex items-center gap-1.5 text-xs text-orange-500 font-bold border border-orange-200 bg-orange-50 hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-colors px-3 py-1.5 rounded-full self-start"
+          className="flex items-center gap-1.5 text-xs text-red-500 font-bold border border-red-200 bg-red-50 hover:bg-red-500 hover:text-white hover:border-red-500 transition-colors px-3 py-1.5 rounded-full self-start"
         >
           <TrashIcon className="w-3.5 h-3.5" />
           حذف همه فیلترها

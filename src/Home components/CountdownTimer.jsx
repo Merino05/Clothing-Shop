@@ -47,7 +47,7 @@ export default function CountdownTimer({ targetDate }) {
         <div key={u.label} className="text-center">
           <div
             key={u.value}
-            className="w-9 h-9 sm:w-11 sm:h-11 rounded-full border-2 border-orange-300 flex items-center justify-center font-bold text-sm sm:text-base bg-white/50 backdrop-blur-sm animate-pulseOnce"
+            className="w-9 h-9 sm:w-11 sm:h-11 rounded-full border-2 border-red-300 flex items-center justify-center font-bold text-sm sm:text-base bg-white/50 backdrop-blur-sm animate-pulseOnce"
           >
             {String(u.value).padStart(2, "0").toLocaleString("fa-IR")}
           </div>

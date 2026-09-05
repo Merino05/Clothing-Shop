@@ -40,7 +40,7 @@ const [selectedAddress, setSelectedAddress] = useState(null);
     return (
       <div className="max-w-3xl mx-auto px-8 pt-40 pb-16 text-center">
         <p className="text-neutral-400">سبد خرید شما خالی است.</p>
-        <Link to="/products" className="text-orange-500 font-bold hover:underline">
+        <Link to="/products" className="text-red-500 font-bold hover:underline">
           مشاهده محصولات
         </Link>
       </div>
@@ -64,7 +64,7 @@ const [selectedAddress, setSelectedAddress] = useState(null);
           {/* آدرس تحویل */}
           <section>
             <h2 className="font-black text-lg mb-4 flex items-center gap-2">
-              <LocationIcon className="w-5 h-5 orange" />
+              <LocationIcon className="w-5 h-5 red" />
               آدرس تحویل
             </h2>
             <div className="flex flex-col gap-3">
@@ -74,14 +74,14 @@ const [selectedAddress, setSelectedAddress] = useState(null);
                   onClick={() => setSelectedAddress(addr.id)}
                   className={`flex items-start gap-3 text-right border rounded-2xl p-4 transition-colors ${
                     selectedAddress === addr.id
-                      ? "border-orange-500 bg-orange-50/40"
+                      ? "border-red-500 bg-red-50/40"
                       : "border-neutral-100 hover:bg-neutral-50"
                   }`}
                 >
                   <div
                     className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 mt-0.5 ${
                       selectedAddress === addr.id
-                        ? "border-orange-500 bg-orange-500"
+                        ? "border-red-500 bg-red-500"
                         : "border-neutral-300"
                     }`}
                   >
@@ -103,7 +103,7 @@ const [selectedAddress, setSelectedAddress] = useState(null);
           {/* زمان ارسال */}
           <section>
             <h2 className="font-black text-lg mb-4 flex items-center gap-2">
-              <ClockIcon className="w-5 h-5 orange" />
+              <ClockIcon className="w-5 h-5 red" />
               زمان ارسال
             </h2>
             <div className="grid sm:grid-cols-2 gap-3">
@@ -113,7 +113,7 @@ const [selectedAddress, setSelectedAddress] = useState(null);
                   onClick={() => setSelectedSlot(slot.id)}
                   className={`flex items-center justify-between border rounded-2xl px-4 py-3.5 transition-colors ${
                     selectedSlot === slot.id
-                      ? "border-orange-500 bg-orange-50/40"
+                      ? "border-red-500 bg-red-50/40"
                       : "border-neutral-100 hover:bg-neutral-50"
                   }`}
                 >
@@ -124,7 +124,7 @@ const [selectedAddress, setSelectedAddress] = useState(null);
                   <div
                     className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${
                       selectedSlot === slot.id
-                        ? "border-orange-500 bg-orange-500"
+                        ? "border-red-500 bg-red-500"
                         : "border-neutral-300"
                     }`}
                   >
@@ -140,7 +140,7 @@ const [selectedAddress, setSelectedAddress] = useState(null);
           {/* روش ارسال */}
           <section>
             <h2 className="font-black text-lg mb-4 flex items-center gap-2">
-              <TruckIcon className="w-5 h-5 orange" />
+              <TruckIcon className="w-5 h-5 red" />
               روش ارسال
             </h2>
             <div className="flex flex-col gap-3">
@@ -148,7 +148,7 @@ const [selectedAddress, setSelectedAddress] = useState(null);
                 onClick={() => setShippingMethod("normal")}
                 className={`flex items-center justify-between border rounded-2xl px-4 py-4 transition-colors ${
                   shippingMethod === "normal"
-                    ? "border-orange-500 bg-orange-50/40"
+                    ? "border-red-500 bg-red-50/40"
                     : "border-neutral-100 hover:bg-neutral-50"
                 }`}
               >
@@ -169,7 +169,7 @@ const [selectedAddress, setSelectedAddress] = useState(null);
                 onClick={() => setShippingMethod("express")}
                 className={`flex items-center justify-between border rounded-2xl px-4 py-4 transition-colors ${
                   shippingMethod === "express"
-                    ? "border-orange-500 bg-orange-50/40"
+                    ? "border-red-500 bg-red-50/40"
                     : "border-neutral-100 hover:bg-neutral-50"
                 }`}
               >
@@ -214,7 +214,7 @@ const [selectedAddress, setSelectedAddress] = useState(null);
 
             <div className="flex items-center justify-between">
               <span className="font-bold">مبلغ نهایی</span>
-              <span className="font-black text-lg orange">
+              <span className="font-black text-lg red">
                 {finalTotal.toLocaleString("fa-IR")} تومان
               </span>
             </div>
@@ -227,7 +227,7 @@ const [selectedAddress, setSelectedAddress] = useState(null);
               <button
                 disabled={!canContinue}
                 onClick={() => setConfirmed(true)}
-                className="bg-orange-500 text-sm text-white font-bold py-3 rounded-md hover:bg-orange-600 transition-colors mt-2 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-orange-500"
+                className="bg-red-500 text-sm text-white font-bold py-3 rounded-md hover:bg-red-600 transition-colors mt-2 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-red-500"
               >
                 {canContinue ? "ثبت نهایی سفارش" : "آدرس و زمان ارسال را انتخاب کنید"}
               </button>

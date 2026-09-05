@@ -19,12 +19,12 @@ export default function CollectionStrip() {
             {STRIP_ITEMS.map((it) => (
               <div
                 key={it.name}
-                className="group flex items-center justify-between py-4 hover:bg-orange-300/20 px-3 -mx-3 transition-colors cursor-pointer"
+                className="group flex items-center justify-between py-4 hover:bg-red-300/20 px-3 -mx-3 transition-colors cursor-pointer"
               >
                 <div className="flex items-center gap-4">
                   <span className="font-bold text-sm">{it.name}</span>
                 </div>
-                <div className="flex items-center gap-3 text-neutral-200 group-hover:text-orange-400 transition-colors">
+                <div className="flex items-center gap-3 text-neutral-200 group-hover:text-red-400 transition-colors">
                   <Price price={it.price} /> <HeartIcon className="w-4 h-4" />
                   <BagIcon className="w-4 h-4" />
                 </div>
